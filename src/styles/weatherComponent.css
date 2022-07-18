@@ -1,0 +1,23 @@
+.weathercontain{
+    background-color: rgb(228, 216, 230);
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+.weatherHeader{
+    border-Bottom:7px lightgray solid;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9rem;
+    margin-top: 5rem;
+    font-size: 10px;
+}
+.weatherCard{
+    position: relative;
+    bottom: 80px;
+    width: 100%;
+    margin-left: 1rem;
+}
+.radiusForCards{
+    border-radius: 20px;
+}

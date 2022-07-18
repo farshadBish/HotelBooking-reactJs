@@ -1,0 +1,48 @@
+.smallHotel{
+    background-color: #9C9994;
+    font-size: 16px;
+    color: white;
+}
+.contaiOneHotel{
+    margin-top: 10rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+.contaiOneHotel2{
+    margin-top: 1rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+.secondContain{
+    background: #16BFFD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.firstContain{
+    background: #654ea3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.thirdContain{
+background: #e96443;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+@media only screen and (max-width:1266px) {
+    .contaiOneHotel{
+        margin-top: 10rem;
+    } 
+}
+@media only screen and (max-width:835px) {
+    .contaiOneHotel{
+        margin-top: 16rem;
+    } 
+}
+@media only screen and (max-width:578px) {
+    .contaiOneHotel{
+        margin-top: 18rem;
+    } 
+}

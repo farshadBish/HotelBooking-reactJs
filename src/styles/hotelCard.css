@@ -1,0 +1,50 @@
+.allCardContain{
+    margin-bottom: 3rem;
+    padding-bottom: 5rem;
+}
+.cardHeader{
+    border-Bottom:7px lightgray solid;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    font-size: 10px;
+}
+.hotelCards{
+    border: 1px black solid;
+    border-radius: 20px;
+    background-color: #AB582C;
+}
+.textContain{
+    line-height: 0.2rem;
+}
+.cardLink{
+    color: white;
+    background-color: rgba(13, 13, 188, 0.8);
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+.bookmarkIcon{
+    position: absolute;
+    right: 30px;
+    font-size: 45px;
+    color: rgb(164, 127, 23);
+}
+.bookmarkContain{
+    right: 40px;
+    top: 27px;
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    z-index: 1;
+}
+
+.bookmarkActive{
+    transition: 0.5s;
+    color: green;
+}
+.bookmarkDisactive{
+    transition: 0.5s;
+    color: white;
+}
