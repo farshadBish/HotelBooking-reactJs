@@ -1,23 +1,24 @@
-import { BrowserRouter , Routes , Route} from 'react-router-dom';
+import { BrowserRouter , Routes , Route, useLocation} from 'react-router-dom';
 import './App.css';
 import { CustomFooter } from './Components/CustomFooter';
 import CustomNavbar from './Components/CustomNavbar';
 import HomePage from './Components/HomePage';
+import HotelBooking from './Components/HotelBooking';
 import HotelsPage from './Components/HotelsPage';
 import OneHotel from './Components/OneHotel';
 
 function App() {
   return (
     <div className="App">
-      <CustomNavbar/>
+      
       <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/hotels' element={<HotelsPage/>}/>
-        <Route path='/hotel/:id' element={<OneHotel/>}/>
+        <Route path='/' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/>
+        <Route path='/hotels' element={<><CustomNavbar/><HotelsPage/><CustomFooter/></>}/>
+        <Route path='/hotel/:id' element={<><CustomNavbar/><OneHotel/><CustomFooter/></>}/>
+        <Route path='/hotel/:id/booking' element={<HotelBooking/>}/>
       </Routes>
       </BrowserRouter>
-      <CustomFooter/>
     </div>
   );
 }

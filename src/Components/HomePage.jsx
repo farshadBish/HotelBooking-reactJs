@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react'
 import { Col, Container,Row } from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 import CustomJambot from './CustomJambot'
 import CustomNavbar from './CustomNavbar'
 import HotelCarousel from './HotelCarousel'

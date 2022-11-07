@@ -42,7 +42,7 @@ const WeatherComponent = () => {
 </Card>
     </Col>
     </Row>
-    <Button className='ml-auto mr-auto' style={{marginBottom:'2rem',backgroundColor:'#3D2C46', border:'0px'}}>View More Locations</Button>
+    <button className="button-57 ml-auto mr-auto"><span className="text">Locations</span><span>Browse more!</span></button>
     </Container>
   )
 }

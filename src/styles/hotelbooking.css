@@ -1,0 +1,124 @@
+.bookingContainer{
+    background-image: url('../eddi-aguirre-ZAVHbpOn4Jk-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    animation: mymove2 1s;
+}
+@keyframes mymove2 {
+    from{
+        background-position: top;
+    }
+    to{
+        background-position: center;
+    }
+}
+.makeItVisible{
+    animation: mymove 1s
+}
+@keyframes mymove {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+.bookingContainer1{
+    min-height: 100vh;
+    background-color: #101012;
+}
+
+.processBar{
+    background-color: #2B2B2E;
+    min-height: 7.5vh;
+    border-bottom: rgb(134, 127, 127) solid 0.00005px;
+    border-bottom: rgb(134, 127, 127) solid 0.00005px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.processIcons{
+    /* color: white; */
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.112);
+    
+}
+.processIconsOn{
+    font-size: 25px;
+    color: #EFC1CD;
+}
+.processIconsSuccess{
+    font-size: 25px;
+    color: green;
+}
+.processIconDates{
+    font-size: 25px;
+    color: #EFC1CD;
+}
+.processNames{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.112);
+}
+.processNamesSuccess{
+    font-size: 17px;
+    color: green;
+}
+.processNamesOn{
+    font-size: 17px;
+    color: white;
+}
+.processDates{
+    font-size: 17px;
+    color: white;
+}
+.processIconDatesSuccess{
+    font-size: 25px;
+    color: green;
+}
+.processDatesSuccess{
+    font-size: 17px;
+    color: green;
+}
+.middleLine{
+    background-color: white;
+    color: white;
+    width: 30%;
+}
+.datesContainer{
+    background-color: #2B2B2E;
+    width: 530px;
+    min-height: 300px;
+    color: rgba(245, 245, 245, 0.821);
+    border-radius: 10px;
+}
+#start{
+    padding: 3rem;
+    margin-top: -0.5rem;
+    color: white;
+    background-color: #2B2B2E;
+    border: 1px solid rgba(255, 255, 255, 0.116);
+    border-radius: 5px;
+}
+.roomContainer{
+    background-color:#2B2B2E;
+    border-radius: 7px;
+    animation: mymove3 1.5s;
+}
+@keyframes mymove3 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+.back-button{
+    cursor: pointer;
+}
+.back-button:hover{
+    transition: 0.3s;      
+    transform: scale(1.9);
+}

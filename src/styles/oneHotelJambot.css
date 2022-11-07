@@ -1,61 +1,61 @@
-.formInput2{
-    position: relative;
-    background-color: white;
-    width: 103%;
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
-    bottom: 70px;
-    left: -15px;
-    height: 26vh;
-    border-radius: 20px;
-    border: 0.2px solid rgb(189, 185, 185);
-    box-shadow: gray 0px 0px 10px 0px;
+.formInput2 {
+  position: relative;
+  background-color: white;
+  width: 103%;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  bottom: 70px;
+  left: -16px;
+  height: 26vh;
+  border-radius: 20px;
+  border: 0.2px solid rgb(189, 185, 185);
+  box-shadow: gray 0px 0px 10px 0px;
 }
-.BrowseBtn{
-    border-radius: 5px;
-    background-color: rgb(85, 55, 57,0.8);
-    padding: 0.5rem;
-    border: 0;
-    cursor: pointer;
-    color: white;
+.BrowseBtn {
+  border-radius: 5px;
+  background-color: rgb(85, 55, 57, 0.8);
+  padding: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  color: white;
 }
-.BrowseBtn:hover{
-    transition: 0.1s;
-    background-color: rgb(85, 55, 57,1);
-    padding: 0.7rem;
+.BrowseBtn:hover {
+  transition: 0.3s;
+  background-color: rgb(85, 55, 57, 1);
+  transform: scale(1.1);
 }
-@media only screen and (max-width:834px) {
-    .formInput2{
-        bottom: 10px;
-    }
-    .disappearIt{
-        display: none;
-    }
+@media only screen and (max-width: 834px) {
+  .formInput2 {
+    bottom: 10px;
+  }
+  .disappearIt {
+    display: none;
+  }
 }
-@media only screen and (max-width:834px) {
-    .formInput2{
-        bottom: 10px;
-        left: -9px;
-    }
-    .disappearIt{
-        display: none;
-    }
+@media only screen and (max-width: 834px) {
+  .formInput2 {
+    bottom: 10px;
+    left: -9px;
+  }
+  .disappearIt {
+    display: none;
+  }
 }
-@media only screen and (max-width:577px) {
-    .formInput2{
-        height: 41vh;
-    }
-    .smallPicDisapear{
-        display: none;
-    }
+@media only screen and (max-width: 577px) {
+  .formInput2 {
+    height: 41vh;
+  }
+  .smallPicDisapear {
+    display: none;
+  }
 }
-@media only screen and (max-width:496px) {
-    .formInput2{
-        height: 41vh;
-    }
+@media only screen and (max-width: 496px) {
+  .formInput2 {
+    height: 41vh;
+  }
 }
-@media only screen and (max-width:420px) {
-    .formInput2{
-        height: 41vh;
-    }
+@media only screen and (max-width: 420px) {
+  .formInput2 {
+    height: 41vh;
+  }
 }

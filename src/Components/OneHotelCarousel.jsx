@@ -1,7 +1,16 @@
-import { Carousel, Col, Container, ListGroup, Row, Table } from "react-bootstrap";
+import { Button, Carousel, Col, Collapse, Container, ListGroup, Modal, Row, Table } from "react-bootstrap";
 import "../styles/oneHotelCarousel.css";
 import { FaBookmark, FaStar, FaMapMarkerAlt,FaLevelDownAlt ,FaFirstOrder,FaCheck,FaTimes,FaBed,FaArrowAltCircleDown} from "react-icons/fa";
+import { useState } from "react";
+import EachRoomTypeModal from "./EachRoomTypeModal";
+import { useNavigate, useParams } from "react-router-dom";
 const OneHotelCarousel = (props) => {
+  const params = useParams()
+  const navigate = useNavigate()
+
+  const goToBooking = () =>{
+    navigate(`/hotel/${params.id}/booking`)
+  }
   return (
     <>
       <Container style={{borderRadius:'20px'}} className='pb-1 firstContain'>
@@ -123,7 +132,7 @@ const OneHotelCarousel = (props) => {
           <Row>
             <Col lg={6}>
               <Carousel fade className="shadow-lg" style={{ width: "100%", marginTop: '-40px',borderRadius:'20px'}}>
-                {props.hotelImages.slice(0,4).map((item, i) => (
+                {props.hotelImages.slice(2,6).map((item, i) => (
                   <Carousel.Item key={i}>
                     <img
                       className="d-block w-100"
@@ -141,7 +150,7 @@ const OneHotelCarousel = (props) => {
               </Carousel>
             </Col>
             <Col lg={6}>
-              <div className="  justify-content-center mt-4">
+              <div className="justify-content-center mt-4">
                 <h4 className="d-inline">
                     Choices Between <b>{props.hotelDetails[0].roomTypes.length} Different</b> Room Types!
                 </h4>
@@ -152,9 +161,9 @@ const OneHotelCarousel = (props) => {
                   </b>
                 </p>
                 <p className='text-left'>
-                    Room types means these are different kind of rooms in hotel in the ways of for example the <b>occupancy</b> they have and the different <b>amenities</b> with different views and all these, for seeing all room types these hotel provides click on the button below <FaArrowAltCircleDown/>.
+                    Room types means these are different kind of rooms in hotel in the ways of for example the <b>occupancy</b> they have and the different <b>amenities</b> with different views and all these, for book a room in this hotel and see all room types these hotel provides click on the button below <FaArrowAltCircleDown/>.
                 </p>
-                <button className="mt-md-3 mt-md-2 mt-sm-3 mt-0 BrowseBtn">Check Rooms!</button>
+                <button onClick={goToBooking} className="mt-md-3 mt-md-2 mt-sm-3 mt-0 BrowseBtn">Book now!</button>
               </div>
             </Col>
           </Row>
