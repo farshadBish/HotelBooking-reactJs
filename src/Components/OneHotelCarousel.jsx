@@ -1,4 +1,4 @@
-import { Button, Carousel, Col, Collapse, Container, ListGroup, Modal, Row, Table } from "react-bootstrap";
+import { Badge, Button, Carousel, Col, Collapse, Container, ListGroup, Modal, Row, Table } from "react-bootstrap";
 import "../styles/oneHotelCarousel.css";
 import { FaBookmark, FaStar, FaMapMarkerAlt,FaLevelDownAlt ,FaFirstOrder,FaCheck,FaTimes,FaBed,FaArrowAltCircleDown} from "react-icons/fa";
 import { useState } from "react";
@@ -84,7 +84,7 @@ const OneHotelCarousel = (props) => {
                    Features <FaLevelDownAlt />
                   </b>
                 </p>
-                <Table striped bordered hover size="sm">
+                <Table striped bordered hover size="sm" className=" mb-5 mb-lg-0">
   <thead>
     <tr>
       <th>#</th>
@@ -163,7 +163,9 @@ const OneHotelCarousel = (props) => {
                 <p className='text-left'>
                     Room types means these are different kind of rooms in hotel in the ways of for example the <b>occupancy</b> they have and the different <b>amenities</b> with different views and all these, for book a room in this hotel and see all room types these hotel provides click on the button below <FaArrowAltCircleDown/>.
                 </p>
-                <button onClick={goToBooking} className="mt-md-3 mt-md-2 mt-sm-3 mt-0 BrowseBtn">Book now!</button>
+                {window.localStorage.getItem("SetToken") ? <button onClick={goToBooking} className="mt-md-3 mt-md-2 mt-sm-3 mt-0 BrowseBtn">Book now!</button> :
+                <><Button onClick={goToBooking} style={{backgroundColor:"gray",border:"none"}} disabled className="mt-md-3 mt-md-2 mt-sm-3 mt-0">Book now!</Button><br/>
+                <Badge onClick={()=>navigate("/login-register")} style={{cursor:"pointer"}} className="p-2 mt-2" variant="warning">To continue to booking please <b>Login</b> first</Badge></>}
               </div>
             </Col>
           </Row>

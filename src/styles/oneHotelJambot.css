@@ -41,7 +41,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 577px) {
+@media only screen and (max-width: 777px) {
   .formInput2 {
     height: 41vh;
   }
@@ -51,11 +51,11 @@
 }
 @media only screen and (max-width: 496px) {
   .formInput2 {
-    height: 41vh;
+    height: 34vh;
   }
 }
 @media only screen and (max-width: 420px) {
   .formInput2 {
-    height: 41vh;
+    height: 37vh;
   }
 }

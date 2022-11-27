@@ -10,7 +10,7 @@ const HotelCard = (props) => {
   return (
     <div className='allCardContain'>
         <Container style={{borderLeft:'purple 7px solid'}}>
-          <Row style={{ borderRadius:'20px'}} className='ml-1 mr-1'>
+          <Row style={{ borderRadius:'20px'}} className=''>
             <Col xs={12}>
         <h1 className='display-3 cardHeader'>Our Hotels</h1>
         </Col>

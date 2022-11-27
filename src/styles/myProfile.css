@@ -1,0 +1,256 @@
+.contentBg{
+    background-image: url('https://cdn.discordapp.com/attachments/713873647550464000/1022623803957850162/rus2t.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    min-height: 100vh;
+}
+.contentBg2{
+    background-image: url('https://cdn.discordapp.com/attachments/713873647550464000/1022623803957850162/rus2t.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.contentstabs{
+    border-bottom: 3px solid white;
+    padding-bottom: 1rem;
+    border-radius: 15px;
+}
+
+.theProfileHeader{
+    background-color:rgba(245, 245, 245, 0.7);
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    padding-left:4rem;
+    padding-right:4rem;
+    border-radius:20px;
+    margin-top:-1.2rem;
+}
+
+.mainContents{
+    border-radius: 10px;
+}
+
+.firstStyle{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    box-shadow: -12px 0px 25px  rgba(128, 128, 128, 0.229);
+    border-radius: 10px;
+}
+
+.firstStyle:hover{
+    color: white;
+    transform: scale(1.07);
+    box-shadow: none;
+}
+
+.secondStyle{
+    border-radius: 15px;
+    background-color: #3e486a;
+    color: black;
+    transition: 0.5s;
+    box-shadow: -12px 0px 25px  rgb(128, 128, 128 , 0.229);
+    
+}
+.secondStyle:hover{
+    color: black;
+}
+.connentingContainer{
+    /* background-color: rgba(0, 0, 0, 0.285); */
+    background: linear-gradient(rgba(0, 0, 0, 0.601) 100% ,rgba(0, 0, 0, 0.034) 2%);
+    border-radius: 10px 30px 10px 30px;
+    box-shadow:black 0px 5px 15px;
+}
+.aboutUsContainer{
+    background: linear-gradient(rgba(0, 0, 0, 0.601) 100% ,rgba(0, 0, 0, 0.034) 2%);
+    border-radius: 10px 30px 10px 30px;
+    box-shadow:black 0px 5px 15px;
+}
+
+.openingIcon{
+    transition: 10s;
+}
+.mainMiddleContent{
+    padding-left:12rem;
+    padding-right:12rem;
+}
+@media screen and (max-width: 1200px) {
+    .mainMiddleContent{
+        padding-left: 9rem;
+        padding-right: 9rem;
+    }
+  }
+  @media screen and (max-width: 1090px) {
+    .mainMiddleContent{
+        padding-left: 9rem;
+        padding-right: 9rem;
+    }
+  }
+  @media screen and (max-width: 1060px) {
+    .mainMiddleContent{
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+  }
+  @media screen and (max-width: 1030px) {
+    .mainMiddleContent{
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .mainMiddleContent{
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+  }
+  @media screen and (max-width: 965px) {
+    .mainMiddleContent{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+  }
+  @media screen and (max-width: 930px) {
+    .mainMiddleContent{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+  }
+  @media screen and (max-width : 950px ) {
+    .contentBg{
+        background-image: url('https://cdn.discordapp.com/attachments/713873647550464000/1022623803957850162/rus2t.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        min-height: 100vh;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .mainMiddleContent{
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+  }
+  @media screen and (max-width : 600px) {
+    .eachBookingComponent{
+    min-width: 200px;
+    max-width: 200px;
+    }
+  }
+  @media screen and (max-width : 576px ) {
+    .connentingContainer{
+        /* background-color: rgba(0, 0, 0, 0.285); */
+        background: linear-gradient(#3e486a 100% ,rgba(0, 0, 0, 0.034) 2%);
+        border-radius: 10px 30px 10px 30px;
+        box-shadow:black 0px 5px 15px;
+        color: black;
+    }
+    .aboutUsContainer{
+        background: linear-gradient(#3e486a 100% ,rgba(0, 0, 0, 0.034) 2%);
+        border-radius: 10px 30px 10px 30px;
+        box-shadow:black 0px 5px 15px;
+        color: black;
+        font-size: 12px;
+    }
+  }
+  @media screen and (max-width:457px) {
+    .theProfileHeader{
+        font-size: 60px;
+    }
+    .connentingContainer{
+        font-size: 60px;
+    }
+  }
+  @media screen and (max-width:407px) {
+    .theProfileHeader{
+        font-size: 55px;
+    }
+    .connentingContainer{
+        font-size: 55px;
+    }
+  }
+  @media screen and (max-width:375px) {
+    .eachBookingComponent{
+        min-width: 150px;
+        max-width: 150px;
+        }
+  }
+  @media screen and (max-width:386px) {
+    .theProfileHeader{
+        font-size: 50px;
+    }
+    .connentingContainer{
+        font-size: 50px;
+    }
+  }
+  @media screen and (max-width:366px) {
+    .theProfileHeader{
+        font-size: 40px;
+    }
+    .connentingContainer{
+    
+        font-size: 40px;
+    }
+  }
+  @media screen and (max-width:325px) {
+    .theProfileHeader{
+        font-size: 34px;
+    }
+    .connentingContainer{
+    
+        font-size: 34px;
+    }
+  }
+/* Joining Button */
+
+.noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+          -webkit-tap-highlight-color: transparent;
+  }
+  
+  .joinButton {
+      width: 150px;
+      height: 50px;
+      cursor: pointer;
+      border: none;
+      font-family: 'Comfortaa', cursive;
+      color: black;
+      font-size: 17px;
+      border-radius: 4px;
+      box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+      background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, #6c7eb9cf 21%);
+      background-size: 150%;
+      background-position: right;
+      transition: 1s;
+  }
+  
+  .joinButton:hover {
+      background-position: left;
+      color: white;
+      box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+  }
+  
+  .joinButton:focus {
+      outline: none;
+  }
+  .mainContainerAnimation{
+    animation: mymove8 0.5s;
+  }
+  @keyframes mymove8 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}

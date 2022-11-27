@@ -4,6 +4,15 @@
     background-repeat: no-repeat;
     background-position:bottom;
     height: 55vh;
+    animation: mymove3 1.5s;
+}
+@keyframes mymove3 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .logo{
     margin-top: 1.5rem;

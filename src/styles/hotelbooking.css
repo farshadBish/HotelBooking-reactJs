@@ -4,9 +4,9 @@
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-    animation: mymove2 1s;
+    animation: mymove1 1s;
 }
-@keyframes mymove2 {
+@keyframes mymove1 {
     from{
         background-position: top;
     }
@@ -30,8 +30,24 @@
     min-height: 100vh;
     background-color: #101012;
 }
-
+.bookingWasSuccesfull{
+    font-size: 80px;
+}
 .processBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2B2B2E;
+    min-height: 7.5vh;
+    border-bottom: rgb(134, 127, 127) solid 0.00005px;
+    border-bottom: rgb(134, 127, 127) solid 0.00005px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.processBar2{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
     background-color: #2B2B2E;
     min-height: 7.5vh;
     border-bottom: rgb(134, 127, 127) solid 0.00005px;
@@ -93,6 +109,7 @@
     color: rgba(245, 245, 245, 0.821);
     border-radius: 10px;
 }
+
 #start{
     padding: 3rem;
     margin-top: -0.5rem;
@@ -101,6 +118,7 @@
     border: 1px solid rgba(255, 255, 255, 0.116);
     border-radius: 5px;
 }
+
 .roomContainer{
     background-color:#2B2B2E;
     border-radius: 7px;
@@ -116,9 +134,113 @@
     
 }
 .back-button{
+    position: absolute;
+    z-index: 98;
+    top:15%;
+    left:3%;
+    padding: 0.2rem;
     cursor: pointer;
+    color: red;
 }
 .back-button:hover{
+    transform: scale(1.15);
+    border-radius: 5px;
+    background-color:#2B2B2E;
+    color: whitesmoke;
     transition: 0.3s;      
-    transform: scale(1.9);
+}
+.successBookingPage{
+    background-color:green;
+    animation: mymove3 1.5s;
+}
+.deletingBookingPage{
+    background-color:red;
+    animation: mymove10 1.5s;
+}
+@keyframes mymove10 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+.exitButton{
+    position: absolute;
+    z-index: 98;
+    top:12%;
+    right: 3% ;
+    font-size: 27px;
+    background-color: #2B2B2E;
+    color:rgba(255, 255, 255, 0.5) ;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.exitButton:hover{
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #2B2B2E;
+    transform: scale(1.1);
+    
+}
+.nameOnCards{
+    width: 118.5%;
+}
+
+.Cvv{
+    width: 100%;
+}
+.expiration{
+    width: 100%;
+}
+.payments{
+    width: 100%
+}
+@media only screen and (max-width:992px) {
+    .nameOnCards{
+        width: 111%;
+    }
+}
+
+@media only screen and (max-width:767.5px) {
+    .nameOnCards{
+    width: 76.5%;
+    }
+.expiration{
+    width: 68%;
+}
+.payments{
+    width: 64.3%
+}
+.processBar{
+    display: none;
+}
+.processBar2{
+    display: flex;
+}
+}
+
+@media only screen and (max-width:571px) {
+    #start{
+        padding: 0.5rem;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .datesContainer{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:400px) {
+    .bookingWasSuccesfull{
+        font-size: 50px;
+    }
 }

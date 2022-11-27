@@ -84,7 +84,6 @@ import { Audio } from  'react-loader-spinner'
     color = 'purple'
     ariaLabel = 'three-dots-loading'     
     wrapperStyle
-    wrapperClass
   />
   </div>
   </Col>

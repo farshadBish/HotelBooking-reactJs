@@ -9,11 +9,12 @@ import '../styles/jambotHotelsPage.css'
 const HotelsPage = () => {
   const [hotelName, setHotelName] = useState([]);
   const [name, setName] = useState('');
-  const [country, setCountry] = useState('ITA');
+  const [country, setCountry] = useState('italy');
+  const [theCountryCode,setTheCountryCode] = useState('ITA')
   const location = useLocation();
       const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=${country == '' ? 'ITA' : country}&name[like]=${name == '' ? '[SANDBOX]' : name}`, {
+        let response = await fetch(`https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=${theCountryCode}&name[like]=${name == '' ? '[SANDBOX]' : name}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",
@@ -27,6 +28,24 @@ const HotelsPage = () => {
         console.log(error);
       }
     }
+    const countryCode = async () => {
+      try {
+        let response = await fetch(`https://restcountries.com/v3.1/name/${country}`, {
+          method: 'GET',
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })
+        let data = await response.json();
+        setTheCountryCode(data[0].cca3)
+        console.log(data , "the country code is here");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    useEffect(()=>{
+      countryCode();
+    },[country])
   useEffect(() => {
     fetchHotels();
     console.log(hotelName, 'this is ur array');
