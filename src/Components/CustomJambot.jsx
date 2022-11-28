@@ -53,8 +53,8 @@ function CustomJambot() {
           <img src="small-1.jpg" alt="" className="radius ml-4" />
           <img src="Small-2.jpg" alt="" className="radius" />
           <img src="Small-3.jpg" alt="" className="radius smallPicDisapear" />
-          <img src="small-4.jpg" alt="" className="radius smallPicDisapear" />
-          <img src="small-5.jpg" alt="" className="radius smallPicDisapear" />
+          <img src="https://cdn.discordapp.com/attachments/685210402577055758/1046810021469630464/Small-4.jpg" alt="" className="radius smallPicDisapear" />
+          <img src="https://cdn.discordapp.com/attachments/685210402577055758/1046810049223327854/Small-5.jpg" alt="" className="radius smallPicDisapear" />
         </div>
       </Container>
     </Jumbotron>
