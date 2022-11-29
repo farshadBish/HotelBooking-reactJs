@@ -306,7 +306,7 @@ const MyProfile = () => {
               <Col xs={12} className="">
          <h3 className="display-4 text-left mb-3 connentingContainer pl-4 py-2"><b>Your Bookings</b></h3>
               </Col>
-              {bookedRooms.map((item,i) => (
+          {bookedRooms.length === 0 ?<Col xs={12}> <div className="text-dark"><b>You have no rooms booked in progress</b></div></Col> : bookedRooms.map((item,i) => (
                 <SingleBookedRoom item={item} key={i}/>
               ))}
             </Row>
