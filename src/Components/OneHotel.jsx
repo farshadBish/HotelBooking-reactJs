@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter , Routes , Route , useParams} from 'react-router-dom';
-import { Button, Col, Container, Form, FormControl, Jumbotron, Row , Carousel } from 'react-bootstrap'
-import CustomJambot from "./CustomJambot";
+import {useParams} from 'react-router-dom';
+import {  Col, Container, Row } from 'react-bootstrap'
 import '../styles/oneHotel.css'
 import OneHotelCarousel from "./OneHotelCarousel";
 import OneHotelJambot from "./OneHotelJambot";

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Col, Collapse, Container, Form, Nav, Row, Tab } from "react-bootstrap";
+import { Col,Container, Form, Nav, Row, Tab } from "react-bootstrap";
 import "../styles/myProfile.css"
-import { FaRegArrowAltCircleRight,FaAngleDown,FaAngleLeft,FaRegCheckCircle  } from 'react-icons/fa';
+import { FaRegCheckCircle  } from 'react-icons/fa';
 import SingleBookedRoom from "./SingleBookedRoom";
 import SingleUser from "./SingleUser";
 import { useNavigate } from "react-router-dom";
@@ -122,13 +122,13 @@ const MyProfile = () => {
             setemail(userData.email)
             setAddress(userData.address)
           },[userData])
-        
+        const usedToken = window.localStorage.getItem("SetToken")
             useEffect(()=>{
               if (window.localStorage.getItem("SetToken")) {
                 fetchHotels();
                 bookingDetails();
               }
-            },[window.localStorage.getItem("SetToken")])
+            },[usedToken])
 
             const [allUsers,setAllUsers] = useState([])
 
@@ -173,9 +173,12 @@ const MyProfile = () => {
                     },
                   }
                 );
-                window.localStorage.removeItem("SetToken")
-                setDeletingSuccessful(true)
-                let data = await response.json();
+                if(response.ok){
+                  window.localStorage.removeItem("SetToken")
+                  setDeletingSuccessful(true)
+                } else{
+                  console.log("deleting Error");
+                }
               } catch (error) {
                 console.log(error);
               }

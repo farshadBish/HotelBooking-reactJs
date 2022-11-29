@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import { Button, Col, Container, Form, FormControl, Jumbotron, Row } from 'react-bootstrap'
+import { Col, Container,Jumbotron, Row } from 'react-bootstrap'
 import '../styles/customNavbar.css'
 import '../styles/customJamb.css'
 import '../styles/jambotHotelsPage.css'

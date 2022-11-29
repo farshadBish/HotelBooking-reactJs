@@ -14,7 +14,7 @@ const HotelsPage = () => {
   const location = useLocation();
       const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=${theCountryCode}&name[like]=${name == '' ? '[SANDBOX]' : name}`, {
+        let response = await fetch(`https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=${theCountryCode}&name[like]=${name === '' ? '[SANDBOX]' : name}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",

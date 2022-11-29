@@ -1,4 +1,4 @@
-import { Button, Col, Container, Jumbotron, Row } from "react-bootstrap";
+import { Col, Container, Jumbotron, Row } from "react-bootstrap";
 import '../styles/oneHotelJambot.css';
 import {FaMailBulk,FaPhone} from "react-icons/fa";
 const OneHotelJambot = (props) => {

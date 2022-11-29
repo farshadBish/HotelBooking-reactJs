@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {Col, Card, ListGroup, ListGroupItem} from 'react-bootstrap'
 import { FaBookmark,FaStar } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HotelCardSingle = ({item}) => {
 

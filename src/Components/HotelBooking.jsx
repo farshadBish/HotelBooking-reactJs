@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Audio } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
-import OneHotelJambot from "./OneHotelJambot";
 import {
   FaCalendarAlt,
   FaHouseUser,
@@ -170,12 +169,12 @@ const HotelBooking = () => {
       console.log(error);
     }
   };
-
+ const usedToken = window.localStorage.getItem("SetToken");
   useEffect(()=>{
     if (window.localStorage.getItem("SetToken")) {
       getUser();
     }
-  },[window.localStorage.getItem("SetToken")])
+  },[usedToken])
 
   useEffect(()=>{
     setEmail(userData.email)

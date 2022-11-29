@@ -1,10 +1,7 @@
 import React from "react";
 import {
-  Button,
   Col,
   Container,
-  Form,
-  FormControl,
   Jumbotron,
   Row,
 } from "react-bootstrap";

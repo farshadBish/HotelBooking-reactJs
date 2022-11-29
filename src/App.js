@@ -1,4 +1,4 @@
-import { BrowserRouter , Routes , Route, useLocation} from 'react-router-dom';
+import { BrowserRouter , Routes , Route} from 'react-router-dom';
 import './App.css';
 import { CustomFooter } from './Components/CustomFooter';
 import CustomNavbar from './Components/CustomNavbar';

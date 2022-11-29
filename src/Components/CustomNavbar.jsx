@@ -1,8 +1,8 @@
 
 import React from 'react'
 import { useState , useEffect } from 'react'
-import { Container,Dropdown,Nav,Navbar, NavDropdown} from 'react-bootstrap'
-import { Link, useLocation } from 'react-router-dom'
+import { Container,Dropdown,Nav,Navbar} from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 import '../styles/customNavbar.css'
 import { FaUser } from 'react-icons/fa';
 const CustomNavbar = () => {
@@ -29,11 +29,13 @@ const CustomNavbar = () => {
     }
   };
 
+  const tokenUsed = window.localStorage.getItem("SetToken");
+
     useEffect(()=>{
       if (window.localStorage.getItem("SetToken")) {
         fetchHotels();
       }
-    },[window.localStorage.getItem("SetToken")])
+    },[tokenUsed])
 
   const location = useLocation()
   console.log(location)

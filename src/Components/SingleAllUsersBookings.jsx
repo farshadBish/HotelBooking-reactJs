@@ -18,8 +18,11 @@ const SingleAllUsersBookings = (props) =>{
               },
             }
           );
-          window.location.reload()
-          let data = await response.json();
+          if(response.ok){
+            window.location.reload()
+          }else{
+            console.log("Deleteing Error");
+          }
         } catch (error) {
           console.log(error);
         }

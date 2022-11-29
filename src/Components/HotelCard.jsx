@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
+import {Col, Container, Row } from 'react-bootstrap'
 import '../styles/hotelCard.css'
 import HotelCardSingle from './HotelCardSingle';
 

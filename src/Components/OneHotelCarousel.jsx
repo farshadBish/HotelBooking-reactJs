@@ -1,8 +1,6 @@
-import { Badge, Button, Carousel, Col, Collapse, Container, ListGroup, Modal, Row, Table } from "react-bootstrap";
+import { Badge, Button, Carousel, Col,Container, Row, Table } from "react-bootstrap";
 import "../styles/oneHotelCarousel.css";
-import { FaBookmark, FaStar, FaMapMarkerAlt,FaLevelDownAlt ,FaFirstOrder,FaCheck,FaTimes,FaBed,FaArrowAltCircleDown} from "react-icons/fa";
-import { useState } from "react";
-import EachRoomTypeModal from "./EachRoomTypeModal";
+import { FaStar, FaMapMarkerAlt,FaLevelDownAlt ,FaFirstOrder,FaCheck,FaTimes,FaBed,FaArrowAltCircleDown} from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 const OneHotelCarousel = (props) => {
   const params = useParams()

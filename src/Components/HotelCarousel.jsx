@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
+import { Carousel, Col, Container, Row } from "react-bootstrap";
 import '../styles/hotelCarousel.css'
-import { Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { Audio } from  'react-loader-spinner'
 
 
