@@ -106,7 +106,7 @@ const HotelBooking = () => {
   const fetchHotels = async () => {
     try {
       let response = await fetch(
-        `https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`,
+        `https://cors-anywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`,
         {
           method: "GET",
           headers: {

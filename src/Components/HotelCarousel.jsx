@@ -22,7 +22,7 @@ import { Audio } from  'react-loader-spinner'
       
       const fetchHotels = async () =>{
         try {
-          let response = await fetch(`https://corsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=ITA`,{
+          let response = await fetch(`https://cors-anywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=ITA`,{
             method : 'GET',
             headers : {
               "Accept-Encoding" : "gzip",
