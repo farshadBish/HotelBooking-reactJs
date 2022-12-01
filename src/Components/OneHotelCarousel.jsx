@@ -164,7 +164,7 @@ const OneHotelCarousel = (props) => {
                 {/* {window.localStorage.getItem("SetToken") ? <button onClick={goToBooking} className="mt-md-3 mt-md-2 mt-sm-3 mt-0 BrowseBtn">Book now!</button> :
                 <><Button onClick={goToBooking} style={{backgroundColor:"gray",border:"none"}} disabled className="mt-md-3 mt-md-2 mt-sm-3 mt-0">Book now!</Button><br/>
                 <Badge onClick={()=>navigate("/login-register")} style={{cursor:"pointer"}} className="p-2 mt-2" variant="warning">To continue to booking please <b>Login</b> first</Badge></>} */}
-                <Button onClick={goToBooking} style={{backgroundColor:"gray",border:"none"}} disabled className="mt-md-3 mt-md-2 mt-sm-3 mt-0">Book now!</Button>
+                <Button onClick={goToBooking} style={{backgroundColor:"gray",border:"none"}} className="mt-md-3 mt-md-2 mt-sm-3 mt-0">Book now!</Button>
               </div>
             </Col>
           </Row>
