@@ -346,7 +346,7 @@ const MyProfile = () => {
             </Row></Container> : <Container fluid onClick={()=>navigate(`/`)} className="deletingBookingPage" style={{minHeight:"100vh"}}>
       <Row style={{minHeight:"100vh"}} className="justify-content-center align-items-center">
         <Col xs={12}>
-        <FaRegCheckCircle className="text-white" style={{fontSize:"80px"}}/><p className="text-white" style={{fontSize:"80px"}}>Account deleted!</p>
+        <FaRegCheckCircle className="text-white" style={{fontSize:"80px"}}/><p className="text-white bookingWasSuccesfull">Account deleted!</p>
         <span className="text-white-50">Click anywhere to continue</span>
         </Col>
       </Row>
