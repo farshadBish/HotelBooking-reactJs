@@ -16,7 +16,7 @@ const OneHotel = () => {
     const [roomTypes,setRoomTypes] = useState([])
     const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://cors-anywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`, {
+        let response = await fetch(`https://makingcorsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",
