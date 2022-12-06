@@ -6,11 +6,14 @@ import HotelCard from "./HotelCard";
 import '../styles/customNavbar.css'
 import '../styles/customJamb.css'
 import '../styles/jambotHotelsPage.css'
+import { Audio } from "react-loader-spinner";
 const HotelsPage = () => {
   const [hotelName, setHotelName] = useState([]);
   const [name, setName] = useState('');
   const [country, setCountry] = useState('italy');
   const [theCountryCode,setTheCountryCode] = useState('ITA')
+  const [loading , setLoading] = useState(false)
+  const [secondLoading , setSecondLoading] = useState(false)
   const location = useLocation();
       const fetchHotels = async () => {
       try {
@@ -24,6 +27,8 @@ const HotelsPage = () => {
         let data = await response.json();
         setHotelName(data.data);
         console.log(data);
+        setLoading(false);
+        setSecondLoading(true)
       } catch (error) {
         console.log(error);
       }
@@ -44,15 +49,36 @@ const HotelsPage = () => {
       }
     }
     useEffect(()=>{
+    const timer =  setTimeout(() => {
+        setSecondLoading(false)
+      }, 1000);
+      return () => clearTimeout(timer);
+    },[hotelName])
+    useEffect(()=>{
       countryCode();
     },[country])
   useEffect(() => {
     fetchHotels();
+    setLoading(true)
     console.log(hotelName, 'this is ur array');
     console.log(location.pathname);
   }, [])
   return (
-    <Container fluid>
+    <>
+    {loading===true ? <Row > 
+  <Col xs={12}>
+    <div className="d-flex justify-content-center">
+<Audio
+    height = "100"
+    width = "100"
+    radius = "9"
+    color = 'purple'
+    ariaLabel = 'three-dots-loading'     
+    wrapperStyle
+  />
+  </div>
+  </Col>
+</Row> : <Container fluid>
       <Row>
         <Col sm={12}>
           <JambotHotelsPage />
@@ -93,11 +119,26 @@ const HotelsPage = () => {
             </Col>
           </Row>
         </div>
-        <Col sm={12}>
+        {secondLoading=== true ?
+  <Col xs={12}>
+    <div className="d-flex justify-content-center">
+<Audio
+    height = "100"
+    width = "100"
+    radius = "9"
+    color = 'purple'
+    ariaLabel = 'three-dots-loading'     
+    wrapperStyle
+  />
+  </div>
+  </Col> : <Col sm={12}>
           <HotelCard hotelName={hotelName} />
-        </Col>
+        </Col>}
+        
       </Row>
-    </Container>
+    </Container>}
+    
+    </>
   )
 }
 

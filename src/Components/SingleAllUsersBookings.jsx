@@ -42,7 +42,7 @@ const SingleAllUsersBookings = (props) =>{
       <Collapse in={open}>
         <Container>
             <Row>
-                <Col md={3} xs={12}>
+                <Col md={9} xs={12}>
                 <div id="example-collapse-text" className="text-left text-muted px-3" style={{fontSize:"17px"}}>
                 <p className="pt-3">
                     <b>Country</b> : {props.items.country} , <b>City</b> : {props.items.city} <br/> <b>Arriving Date</b> : {props.items.arriveDate} , <b>Departure Date</b> : {props.items.departureDate} <br/> <b>Room Name</b> : {props.items.roomName} , <b>Occupancy</b> : {props.items.occupancy} person

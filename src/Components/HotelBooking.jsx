@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Audio } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
+import "../styles/eachRoomType.css"
 import {
   FaCalendarAlt,
   FaHouseUser,
@@ -190,7 +191,7 @@ const HotelBooking = () => {
   }, [datesPage, categoryPage, paymentPage]);
   return (
     <>
-    {bookingSuccessful===false ?  <Container
+    {bookingSuccessful===false ? <>  <Container
       fluid
       className={datesPage === true ? "bookingContainer" : "bookingContainer1"}
     >
@@ -673,7 +674,7 @@ const HotelBooking = () => {
           )}
         </>
       )}
-    </Container> : 
+    </Container> </>: 
     <Container fluid onClick={()=>navigate(`/hotel/${params.id}`)} className="successBookingPage" style={{minHeight:"100vh"}}>
       <Row style={{minHeight:"100vh"}} className="justify-content-center align-items-center">
         <Col xs={12}>
