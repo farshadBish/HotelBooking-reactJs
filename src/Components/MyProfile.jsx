@@ -48,7 +48,7 @@ const MyProfile = () => {
           const fetchHotels = async () => {
             try {
               let response = await fetch(
-                `http://localhost:3001/users/me`,
+                `https://impalaapi.herokuapp.com/users/me`,
                 {
                   method: "GET",
                   headers: {
@@ -69,7 +69,7 @@ const MyProfile = () => {
           const bookingDetails = async () => {
             try {
               let response = await fetch(
-                `http://localhost:3001/users/me/bookedRooms`,
+                `https://impalaapi.herokuapp.com/users/me/bookedRooms`,
                 {
                   method: "GET",
                   headers: {
@@ -90,7 +90,7 @@ const MyProfile = () => {
             e.preventDefault()
             const userInfos = {username , email , address}
             try {
-                let response = await fetch(`http://localhost:3001/users/me`,
+                let response = await fetch(`https://impalaapi.herokuapp.com/users/me`,
                 {
                     method:"PUT",
                     headers : {
@@ -135,7 +135,7 @@ const MyProfile = () => {
             const getAllUsers = async () => {
               try {
                 let response = await fetch(
-                  `http://localhost:3001/users`,
+                  `https://impalaapi.herokuapp.com/users`,
                   {
                     method: "GET",
                     headers: {
@@ -164,7 +164,7 @@ const MyProfile = () => {
               e.preventDefault()
               try {
                 let response = await fetch(
-                  `http://localhost:3001/users/me`,
+                  `https://impalaapi.herokuapp.com/users/me`,
                   {
                     method: "DELETE",
                     headers: {
@@ -188,7 +188,7 @@ const MyProfile = () => {
             // const getAllUsersBookings = async () => {
             //   try {
             //     let response = await fetch(
-            //       `http://localhost:3001/users/bookedRooms`,
+            //       `https://impalaapi.herokuapp.com/users/bookedRooms`,
             //       {
             //         method: "GET",
             //         headers: {

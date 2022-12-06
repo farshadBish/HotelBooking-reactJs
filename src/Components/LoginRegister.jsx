@@ -34,7 +34,7 @@ const LoginRegister = () => {
     try {
       setIsFilled(true)
       if(username !== '' && password !== '' && email !== '' && address !== ''){
-      let response = await fetch('http://localhost:3001/users', {
+      let response = await fetch('https://impalaapi.herokuapp.com/users', {
         method: "POST",
         headers: {
             "Content-Type" : "application/json",
@@ -78,7 +78,7 @@ const LoginRegister = () => {
     try {
       if(password !== '' && email !== ''){
         setIsFilled(true)
-      let response = await fetch(`http://localhost:3001/users/login`, {
+      let response = await fetch(`https://impalaapi.herokuapp.com/users/login`, {
         method: "POST",
         headers: {
             "Content-Type" : "application/json",

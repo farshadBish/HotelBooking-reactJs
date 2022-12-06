@@ -127,7 +127,7 @@ const HotelBooking = () => {
     e.preventDefault()
     const userInfos = {departureDate, arriveDate ,  hotelName , city , country , roomName , occupancy ,  email }
     try {
-        let response = await fetch(`http://localhost:3001/users/me/bookedRooms`,
+        let response = await fetch(`https://impalaapi.herokuapp.com/users/me/bookedRooms`,
         {
             method:"POST",
             headers : {
@@ -154,7 +154,7 @@ const HotelBooking = () => {
   const getUser = async () => {
     try {
       let response = await fetch(
-        `http://localhost:3001/users/me`,
+        `https://impalaapi.herokuapp.com/users/me`,
         {
           method: "GET",
           headers: {

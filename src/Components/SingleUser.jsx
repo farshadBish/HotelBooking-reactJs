@@ -10,7 +10,7 @@ const SingleUser = (props) =>{
     const removeBooking = async () => {
         try {
           let response = await fetch(
-            `http://localhost:3001/users/${props.item._id}`,
+            `https://impalaapi.herokuapp.com/users/${props.item._id}`,
             {
               method: "DELETE",
               headers: {
