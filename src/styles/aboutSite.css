@@ -126,4 +126,14 @@
         font-size: 70px;
         transform: rotate(0deg);
     }
+    .middleLeft{
+        background-color: #7D3C1F;
+        min-height: 60vh;
+        border-radius: 0px;
+    }
+    .middleRight{
+        background-color: #002927;
+        min-height: 60vh;
+        border-radius:0px;
+    }
   }
