@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.firstPic{
+    background-image: url('../toa-heftiba-N782gGjoko0-unsplash.jpg');
+    min-height: 60vh;
+    background-clip: padding-box;
+    background-position-y: 80%;
+    background-position-x: 100px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 20px 20px 0px;
+}
+.firstPicSide{
+    background-color: #9A5E37;
+    min-height: 60vh;
+    border-radius: 20px 0px 0px 20px;
+        padding-right: 5rem;
+        padding-left: 5rem;
+}
+.secondPic{
+    background-image: url('../fernando-gutierrez-_eZ5UCr9_QM-unsplash.jpg');
+    min-height: 60vh;
+    background-position-y:-100%;
+    background-clip: padding-box;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    border-radius: 20px 0px 0px 20px;
+    background-size: cover;
+}
+.secondPicSide{
+    background-color: #b27caf;
+    min-height: 60vh;
+    border-radius: 0px 20px 20px 0px;
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+.middleLeft{
+    background-color: #7D3C1F;
+    min-height: 95vh;
+    border-radius: 20px 0px 0px 20px;
+}
+.aboutFont{
+    font-family: 'Rubik Vinyl', cursive;
+    font-size: 100px;
+    transform: rotate(-90deg);
+}
+.textCont{
+    padding-right: 5rem;
+    padding-left: 5rem;
+    min-height: 95vh;
+}
+.aboutText{
+    font-size: 18px;
+}
+.middleRight{
+    background-color: #002927;
+    min-height: 95vh;
+    border-radius: 0px 20px 20px 0px;
+}

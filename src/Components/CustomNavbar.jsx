@@ -63,7 +63,7 @@ const CustomNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
       <Nav.Link href="/hotels" className='mr-md-5 mr-0 navAnim'><b>Hotels</b></Nav.Link>
         <Nav.Link href="#link-2" className='mr-md-5 mr-0 navAnim'><b>Weather</b></Nav.Link>
-        <Nav.Link href="#link-3" className='pr-2 ml-md-0 navAnim'><b>About-Us</b></Nav.Link>
+        <Nav.Link href="/about-site" className='pr-2 ml-md-0 navAnim'><b>About-Site</b></Nav.Link>
     </Navbar.Collapse>
       </Nav>
   </Navbar>

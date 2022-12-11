@@ -1,5 +1,6 @@
 import { BrowserRouter , Routes , Route} from 'react-router-dom';
 import './App.css';
+import AboutSite from './Components/AboutSite';
 import { CustomFooter } from './Components/CustomFooter';
 import CustomNavbar from './Components/CustomNavbar';
 import HomePage from './Components/HomePage';
@@ -19,8 +20,9 @@ function App() {
         <Route path='/hotels' element={<><CustomNavbar/><HotelsPage/><CustomFooter/></>}/>
         <Route path='/hotel/:id' element={<><CustomNavbar/><OneHotel/><CustomFooter/></>}/>
         {window.localStorage.getItem("SetToken") ? <Route path='/login-register' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/> : <Route path='/login-register' element={<><CustomNavbar/><LoginRegister/><CustomFooter/></>}/> }
-       {window.localStorage.getItem("SetToken") ? <Route path='/myProfile' element={<><CustomNavbar/><MyProfile/><CustomFooter/></>}/> : <Route path='/myProfile' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/> }
-        <Route path='/hotel/:id/booking' element={<HotelBooking/>}/>
+        {window.localStorage.getItem("SetToken") ? <Route path='/myProfile' element={<><CustomNavbar/><MyProfile/><CustomFooter/></>}/> : <Route path='/myProfile' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/> }
+        {window.localStorage.getItem("SetToken") ? <Route path='/hotel/:id/booking' element={<HotelBooking/>}/> : <Route path='/hotel/:id/booking' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/> }
+        <Route path='/about-site' element={<><CustomNavbar/><AboutSite/><CustomFooter/></>}/>
       </Routes>
       </BrowserRouter>
     </div>
