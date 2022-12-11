@@ -13,10 +13,10 @@ export const CustomFooter = () => {
                             <Nav.Link href="#">Terms & conditions</Nav.Link>
                         </Col>
                         <Col>
-                            <Nav.Link href="#">Privacy & cookie statement</Nav.Link>
+                            <Nav.Link href="#">Privacy & cookie</Nav.Link>
                         </Col>
                         <Col>
-                            <Nav.Link href="#">Reviews</Nav.Link>
+                            <Nav.Link href="#">Reviews & General settings</Nav.Link>
                         </Col>
                         <Col>
                             <Nav.Link href="#">Manage cookie settings</Nav.Link>

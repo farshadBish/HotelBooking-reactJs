@@ -51,10 +51,80 @@
     min-height: 95vh;
 }
 .aboutText{
-    font-size: 18px;
+    font-size: 15.5px;
 }
 .middleRight{
     background-color: #002927;
     min-height: 95vh;
     border-radius: 0px 20px 20px 0px;
 }
+
+@media screen and (max-width:992px) {
+    .firstPic{
+        border-radius:0;
+        background-position-x: unset;
+    }
+    .firstPicSide{
+        border-radius:0;
+    }
+    .textCont{
+        padding-top: 2rem;
+        min-height: 95vh;
+    }
+    .middleLeft{
+        background-color: #7D3C1F;
+        min-height: 90vh;
+        border-radius: 0px;
+    }
+    .aboutFont{
+        font-family: 'Rubik Vinyl', cursive;
+        font-size: 100px;
+        transform: rotate(0deg);
+    }
+    .middleRight{
+        background-color: #002927;
+        min-height: 90vh;
+        border-radius:0px;
+    }
+    .secondPic{
+        background-image: url('../fernando-gutierrez-_eZ5UCr9_QM-unsplash.jpg');
+        min-height: 60vh;
+        background-position-y:-100%;
+        background-clip: padding-box;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        border-radius:0px;
+        background-size: cover;
+    }
+    .secondPicSide{
+        background-color: #b27caf;
+        min-height: 60vh;
+        border-radius: 0px;
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
+  }
+  @media screen and (max-width:450px){
+    .firstPicSide{
+        border-radius:0;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .textCont{
+        padding-right: 2rem;
+        padding-left: 2rem;
+        min-height: 95vh;
+    }
+    .secondPicSide{
+        background-color: #b27caf;
+        min-height: 60vh;
+        border-radius: 0px;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .aboutFont{
+        font-family: 'Rubik Vinyl', cursive;
+        font-size: 70px;
+        transform: rotate(0deg);
+    }
+  }
