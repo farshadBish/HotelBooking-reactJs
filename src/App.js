@@ -24,7 +24,7 @@ function App() {
                 <meta charSet="utf-8" />
                 <title>Farshad Booking</title>
                 <link rel="canonical" href="http://farshad.eu" />
-                <meta name="description" content="My custom-made HotelBooking sandbox website" />
+                <meta name="description" content="My custom-made HotelBooking sandbox Mern-stack website" />
             </Helmet>
       <BrowserRouter>
       <Routes>
