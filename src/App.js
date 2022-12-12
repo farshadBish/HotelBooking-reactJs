@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { BrowserRouter , Routes , Route} from 'react-router-dom';
 import './App.css';
 import AboutSite from './Components/AboutSite';
@@ -14,11 +15,17 @@ import Header from './Header';
 
 function App() {
 
-    useEffect(() => {
-      document.title = 'Farshad Booking';
-    }, []);
+    // useEffect(() => {
+    //   document.title = 'Farshad Booking';
+    // }, []);
   return (
     <div className="App">
+                  <Helmet>
+                <meta charSet="utf-8" />
+                <title>Farshad Booking</title>
+                <link rel="canonical" href="http://farshad.eu" />
+                <meta name="description" content="My custom-made HotelBooking sandbox website" />
+            </Helmet>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/>
