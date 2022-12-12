@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter , Routes , Route} from 'react-router-dom';
 import './App.css';
 import AboutSite from './Components/AboutSite';
@@ -9,11 +10,15 @@ import HotelsPage from './Components/HotelsPage';
 import LoginRegister from './Components/LoginRegister';
 import MyProfile from './Components/MyProfile';
 import OneHotel from './Components/OneHotel';
+import Header from './Header';
 
 function App() {
+
+    useEffect(() => {
+      document.title = 'Farshad Booking';
+    }, []);
   return (
     <div className="App">
-      
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/>
