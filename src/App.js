@@ -20,12 +20,12 @@ function App() {
     // }, []);
   return (
     <div className="App">
-                  {/* <Helmet>
+                  <Helmet>
                 <meta charSet="utf-8" />
                 <title>Farshad Booking</title>
                 <link rel="canonical" href="http://farshad.eu" />
                 <meta name="description" content="My custom-made HotelBooking sandbox website" />
-            </Helmet> */}
+            </Helmet>
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<><CustomNavbar/><HomePage/><CustomFooter/></>}/>
