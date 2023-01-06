@@ -44,6 +44,10 @@
     font-size: 100px;
     transform: rotate(-90deg);
 }
+.flashFont{
+    font-family: 'Pacifico',cursive;
+    font-size: 100px;
+}
 .textCont{
     padding-right: 5rem;
     padding-left: 5rem;
@@ -79,6 +83,10 @@
         font-family: 'Pacifico', cursive;
         font-size: 100px;
         transform: rotate(0deg);
+    }
+    .flashFont{
+        font-family: 'Pacifico', cursive;
+        font-size: 100px;
     }
     .middleRight{
         background-color: #002927;
@@ -125,6 +133,10 @@
         font-family: 'Pacifico', cursive;
         font-size: 70px;
         transform: rotate(0deg);
+    }
+    .flashFont{
+        font-family: 'Pacifico', cursive;
+        font-size: 70px;
     }
     .middleLeft{
         background-color: #7D3C1F;
