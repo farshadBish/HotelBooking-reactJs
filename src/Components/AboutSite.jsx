@@ -1,9 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
 import '../styles/aboutSite.css'
-import {animated , useSpring} from "@react-spring/web";
+import {animated , useSpring,useScroll} from "@react-spring/web";
 import { FaChevronDown } from "react-icons/fa";
 const AboutSite = () => {
 
+    const { scrollYProgress } = useScroll()
 
     const firstSpring = useSpring({
         from : { opacity:0 , x:-200,},
@@ -83,9 +84,9 @@ const AboutSite = () => {
                     <div className="middleRight d-flex align-items-center justify-content-center text-white"><div><FaChevronDown className="flashFont d-block"/><FaChevronDown className="flashFont d-block"/><FaChevronDown className="flashFont d-block"/></div></div>
                 </animated.div>
                 {/* third col */}
-                <Col md={12} lg={6} className="pr-0 pl-0">
+                <animated.div classname="col-lg-6 col-md-12 pr-0 pl-0" style={{ opacity: scrollYProgress }}>
                 <div className="secondPic"></div>
-                </Col>
+                </animated.div>
                 <Col md={12} lg={6} className="pl-0 pr-0 mb-5">
                 <div className="secondPicSide d-flex align-items-center justify-content-center text-white text-left">
                 <span><h4><b>Thanks for your time and attention :)</b></h4><br/>
