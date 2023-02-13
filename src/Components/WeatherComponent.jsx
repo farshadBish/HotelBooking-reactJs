@@ -32,7 +32,7 @@ const WeatherComponent = () => {
     </Col>
     <Col>
     <Card className='shadow-lg weatherCard ml-auto mr-auto mb-0' style={{borderRadius:'20px'}}>
-  <Card.Img variant="top" src="https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg"/>
+  <Card.Img variant="top" src="https://a.cdn-hotels.com/gdcs/production29/d1375/234f7170-c9f4-4cee-a372-1a198e388483.jpg"/>
   <Card.Body>
     <Card.Title>Moscow</Card.Title>
     <Card.Text>
