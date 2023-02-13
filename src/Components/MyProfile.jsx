@@ -122,11 +122,17 @@ const MyProfile = () => {
             setemail(userData.email)
             setAddress(userData.address)
           },[userData])
+
+
         const usedToken = window.localStorage.getItem("SetToken")
+        const [isAdmin,setIsAdmin] = useState(false)
             useEffect(()=>{
               if (window.localStorage.getItem("SetToken")) {
                 fetchHotels();
                 bookingDetails();
+              }
+              if (userData.role === "Admin"){
+                setIsAdmin(true);
               }
             },[usedToken])
 
@@ -225,7 +231,7 @@ const MyProfile = () => {
           <Nav.Link className={firstTwoToWhite === true ? "secondStyle mt-2 pt-3 ml-md-0 mr-md-0 ml-5 mr-5 " : "firstStyle mt-2 pt-3 ml-md-0 mr-md-0 ml-5 mr-5  border-left border-right "} onClick={makingSecondWhite} eventKey="second"><h5><b>Bookings</b></h5></Nav.Link>
         </Nav.Item>
         </Col>
-        {userData.role === "Admin" ? <>
+        { isAdmin === true ? <>
         <Col>
         <Nav.Item xs={12} lg={3}>
           <Nav.Link className={thirdToWhite === true ? "secondStyle mt-2 pt-3 ml-md-0 mr-md-0 ml-5 mr-5 " : "firstStyle mt-2 pt-3 ml-md-0 mr-md-0 ml-5 mr-5  border-left border-right "}  onClick={makingThirdWhite} eventKey="third"><h5><b>Accounts</b></h5></Nav.Link>

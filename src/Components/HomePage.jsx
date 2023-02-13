@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import { Col, Container,Row } from 'react-bootstrap'
 import CustomJambot from './CustomJambot'
 import HotelCarousel from './HotelCarousel'
@@ -25,6 +26,9 @@ function HomePage() {
   // useEffect(()=>{
   //   fetchHotels()
   // },[])
+  useEffect(()=>{
+    alert("Site is currently updating some features might have stopped working please visit later when updates are done :) ")
+  })
 
   return(
     <Container fluid className=''>
