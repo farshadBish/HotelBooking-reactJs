@@ -131,9 +131,6 @@ const MyProfile = () => {
                 fetchHotels();
                 bookingDetails();
               }
-              if (userData.role === "Admin"){
-                setIsAdmin(true);
-              }
             },[usedToken])
 
             const [allUsers,setAllUsers] = useState([])
@@ -160,6 +157,8 @@ const MyProfile = () => {
               if (userData.role === "Admin") {
                 getAllUsers()
                 // getAllUsersBookings();
+                setIsAdmin(true);
+                console.log("im hereeeeee");
                 console.log(allUsers,"thats all user");
               }
             },[userData])
