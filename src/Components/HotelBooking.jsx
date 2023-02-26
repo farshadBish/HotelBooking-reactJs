@@ -28,7 +28,7 @@ const HotelBooking = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [hotelDetails, setHotelDetails] = useState([]);
+  const [hotelDetails, setHotelDetails] = useState();
   const [bookingSuccessful,setBookingSuccessful] = useState(false);
   // booking states
 
@@ -88,11 +88,11 @@ const HotelBooking = () => {
     setCategoryPage(false);
     setCategoryPageSucc(true);
     setPaymentPage(true);
-    setHotelName(hotelDetails[0].name);
-    setCity(hotelDetails[0].address.city);
-    setCountry(hotelDetails[0].address.countryName);
-    setRoomName(hotelDetails[0].roomTypes[i].name);
-    setOccupancy(hotelDetails[0].roomTypes[i].maxOccupancy)
+    setHotelName(hotelDetails.name);
+    setCity(hotelDetails.city);
+    setCountry(hotelDetails.country);
+    setRoomName(hotelDetails.roomTypes[i].typeName);
+    setOccupancy(hotelDetails.roomTypes[i].maxOccupancy)
     setPrice((departureDate.slice(8,10)-arriveDate.slice(8,10)) * 2520/(i+4)+".00")
   };
   const goBackToCategory = (e) => {
@@ -107,18 +107,17 @@ const HotelBooking = () => {
   const fetchHotels = async () => {
     try {
       let response = await fetch(
-        `https://makingcorsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`,
+        `https://impalaapi.herokuapp.com/hotels/${params.id}`,
         {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "sandb_H4mKDfmhFDRvZ3zTotHWI9ZjcL4C67hlEMLJagEn",
           },
         }
       );
       let data = await response.json();
-      setHotelDetails(data.data);
-      console.log(hotelDetails[0], "thats the hotel details");
+      setHotelDetails(data.hotelInfo);
+      console.log(hotelDetails, "thats the hotel details");
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -195,7 +194,7 @@ const HotelBooking = () => {
       fluid
       className={datesPage === true ? "bookingContainer" : "bookingContainer1"}
     >
-      {loading === true && hotelDetails.length < 1 ? (
+      {loading === true && hotelDetails === undefined ? (
         <Row style={{ minHeight: "92.5vh" }} className="align-items-center">
           <Col xs={12}>
             <div className="d-flex justify-content-center">
@@ -381,7 +380,7 @@ const HotelBooking = () => {
                         <b>Back</b>{" "}
                       </span>
                     </div>
-                  {hotelDetails[0].roomTypes.map((item, i) => (
+                  {hotelDetails.roomTypes.map((item, i) => (
                     <Col
                       lg={4}
                       md={6}
@@ -396,7 +395,7 @@ const HotelBooking = () => {
                         <Row className="">
                           <Col xs={12} className="">
                             <Image
-                              src={item.images[0].url}
+                              src={item.images[0]}
                               height="100%"
                               width="100%"
                               className="pt-3 pb-2"
@@ -410,7 +409,7 @@ const HotelBooking = () => {
                           </Col>
                           <Col xs={12}>
                             <h5 className="text-left text-white">
-                              {item.name}
+                              {item.typeName}
                             </h5>
                           </Col>
                           <Col xs={7} className="text-left mt-2">
@@ -439,7 +438,7 @@ const HotelBooking = () => {
                                 <span
                                   style={{ color: "rgba(255, 255, 255, 0.8)" }}
                                 >
-                                  Available: {Math.floor(Math.random() * 10)}
+                                  Available: {Math.floor(Math.random() * 11)}
                                 </span>
                               </b>
                             </div>
@@ -468,7 +467,7 @@ const HotelBooking = () => {
                             <div>
                               <p className="text-left text-white">
                                 <span style={{ fontSize: "25px" }}>
-                                  ${2520/(i+4)}.00
+                                  ${item.nightlyPrice}
                                 </span>{" "}
                                 <span style={{ fontSize: "15px" }}>
                                   Nightly

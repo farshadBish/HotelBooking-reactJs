@@ -26,9 +26,6 @@ function HomePage() {
   // useEffect(()=>{
   //   fetchHotels()
   // },[])
-  useEffect(()=>{
-    alert("Site is currently updating some features might have stopped working please visit later when updates are done :) ")
-  })
 
   return(
     <Container fluid className=''>

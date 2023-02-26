@@ -2,7 +2,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import '../styles/aboutSite.css'
 import {animated , useSpring} from "@react-spring/web";
 import { FaChevronDown } from "react-icons/fa";
+import { useEffect } from "react";
 const AboutSite = () => {
+    useEffect(()=>{
+        alert("Site is currently updating, some features are improving please visit later too when updates are done :) ")
+      })
 
     const firstSpring = useSpring({
         from : { opacity:0 , x:-200,},
@@ -75,7 +79,7 @@ const AboutSite = () => {
                     </animated.div>
                     <animated.div className="col-xl-6 col-lg-8 pl-0 pr-0" style={sixthSpring}>
                     <div className="textCont d-flex align-items-center justify-content-center text-dark text-left">
-                    <p className="aboutText">For this site i used <b>1.</b> Impala api that provide me to GET Hotels and also some details about them , <b>2.</b> my own back-end made with <b>Express and mongoDB</b> as database that has the possibility to register/login as admin and user using JWT token and also possibility to book hotels ,  manage the booked hotels and also change the the own user credentials, for admin he can modify the users + modifying all the booking made.<b>3. </b>I used AWS EC2 for run my projects using Nginx and also Heroku for running my back-end <b>4. </b>For front-end I used technologies such as <b>React, Bootstrap</b> and also some react packages such as littebit of React spring and also <b>0 Templates</b> has been used and as i know the site is fully responsive. <b>Workflow:</b> Making an account first because without that, aint possible to book bro after you can search for hotels by the name of country and/or by name of the hotel, then you see some details and information about the hotel if see yourself interested you can click on Book Now button to start booking, afterwards you go to another window where the booking process begins (you dont need to put something in payment page) after your booking is done from navbar you can go to ur profile and see your booking <b>also the Weather is still under development.</b> If interested to see how admin works try to log in as : <b>Email : farshadota@gmail.com<br/> Password: 1234</b></p>
+                    <p className="aboutText">For this site i used <b>1.</b> my own back-end made with <b>Express and mongoDB</b> as database that has the possibility to register/login as admin and user using JWT token and also possibility to book hotels ,  manage the booked hotels and also change the the own user credentials, for admin he can modify the users + modifying all the booking made.<b>2. </b>I used AWS EC2 for run my projects using Nginx and also Heroku for running my back-end <b>3. </b>For front-end I used technologies such as <b>React, Bootstrap</b> and also some react packages such as littebit of React spring and also <b>0 Templates</b> has been used and as i know the site is fully responsive. <b>Workflow:</b> Making an account first because without that, aint possible to book bro after you can search for hotels by the name of country and/or by name of the hotel, then you see some details and information about the hotel if see yourself interested you can click on Book Now button to start booking, afterwards you go to another window where the booking process begins (you dont need to put something in payment page) after your booking is done from navbar you can go to ur profile and see your booking <b>also the Weather is still under development.</b> If interested to see how admin works try to log in as : <b>Email : farshadota@gmail.com<br/> Password: 1234</b></p>
                     </div>
                     </animated.div>
                 <animated.div className="col-lg-2 col-xl-3 pl-0 pr-0 mb-lg-2" style={fifthSpring}>
