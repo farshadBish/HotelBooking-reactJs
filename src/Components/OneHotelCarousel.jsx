@@ -16,7 +16,7 @@ const OneHotelCarousel = (props) => {
           <Row>
             <Col lg={6}>
               <Carousel fade className="shadow-lg" style={{ width: "100%", marginTop: '-40px',borderRadius:'20px'}}>
-                {props.hotelImages.slice(0,4).map((item, i) => (
+                {props.hotelDetails.images.slice(0,4).map((item, i) => (
                   <Carousel.Item key={i}>
                     <img
                       className="d-block w-100"
@@ -26,7 +26,7 @@ const OneHotelCarousel = (props) => {
                         maxHeight: "400px",
                         objectFit: "cover",
                       }}
-                      src={item.url}
+                      src={item}
                       alt="First slide"
                     />
                   </Carousel.Item>
@@ -45,23 +45,23 @@ const OneHotelCarousel = (props) => {
                     }}
                   >
                     <b>
-                      {props.hotelDetails.length > 0 && props.hotelDetails[0].starRating}
+                      {props.hotelDetails && props.hotelDetails.starRating}
                       <FaStar className="mb-1 ml-1" />
                     </b>
                   </span>
-                  <b> {props.hotelDetails[0].name}</b>
+                  <b> {props.hotelDetails.name}</b>
                 </h4>
                 <br />
                 <p className="text-mute">
                     <b>
-                  <FaMapMarkerAlt /> {props.hotelDetails[0].address.line1} ,{" "}
-                  {props.hotelDetails[0].address.postalCode}{" "}
-                  {props.hotelDetails[0].address.city} ,{" "}
-                  {props.hotelDetails[0].address.countryName}
+                  <FaMapMarkerAlt /> {props.hotelDetails.address} ,{" "}
+                  {props.hotelDetails.postalCode}{" "}
+                  {props.hotelDetails.city} ,{" "}
+                  {props.hotelDetails.country}
                   </b>
                 </p>
                 <p className='text-left'>
-                    {props.hotelDetails[0].description.short}
+                    {props.hotelDetails.description}
                 </p>
               </div>
             </Col>
@@ -91,10 +91,10 @@ const OneHotelCarousel = (props) => {
     </tr>
   </thead>
   <tbody>
-    {props.hotelAminities.slice(0,6).map((item,i)=>(
+    {props.hotelDetails.hotelAminities.slice(0,6).map((item,i)=>(
             <tr style={{backgroundColor:'#5D5E60'}} className='text-white text-center' key={i}>
             <td>{i+1}</td>
-            <td className="text-left"><div className=""><FaFirstOrder/> {item.formatted}</div></td>
+            <td className="text-left"><div className=""><FaFirstOrder/> {item}</div></td>
             <td><FaCheck/></td>
           </tr>
     ))}
@@ -105,7 +105,7 @@ const OneHotelCarousel = (props) => {
             </Col>
             <Col lg={6}>
               <Carousel fade className="shadow-lg" style={{ width: "100%", marginTop: '-40px',borderRadius:'20px'}}>
-                {props.hotelImages.slice(4,9).map((item, i) => (
+                {props.hotelDetails.images.slice(4,9).map((item, i) => (
                   <Carousel.Item key={i}>
                     <img
                       className="d-block w-100"
@@ -115,7 +115,7 @@ const OneHotelCarousel = (props) => {
                         maxHeight: "400px",
                         objectFit: "cover",
                       }}
-                      src={item.url}
+                      src={item}
                       alt="First slide"
                     />
                   </Carousel.Item>
@@ -130,7 +130,7 @@ const OneHotelCarousel = (props) => {
           <Row>
             <Col lg={6}>
               <Carousel fade className="shadow-lg" style={{ width: "100%", marginTop: '-40px',borderRadius:'20px'}}>
-                {props.hotelImages.slice(2,6).map((item, i) => (
+                {props.hotelDetails.images.slice(2,6).map((item, i) => (
                   <Carousel.Item key={i}>
                     <img
                       className="d-block w-100"
@@ -140,7 +140,7 @@ const OneHotelCarousel = (props) => {
                         maxHeight: "400px",
                         objectFit: "cover",
                       }}
-                      src={item.url}
+                      src={item}
                       alt="First slide"
                     />
                   </Carousel.Item>
@@ -150,12 +150,12 @@ const OneHotelCarousel = (props) => {
             <Col lg={6}>
               <div className="justify-content-center mt-4">
                 <h4 className="d-inline">
-                    Choices Between <b>{props.hotelDetails[0].roomTypes.length} Different</b> Room Types!
+                    Choices Between <b>{props.hotelDetails.roomTypes.length} Different</b> Room Types!
                 </h4>
                 <br />
                 <p className="text-muted">
                     <b>
-                    {props.hotelDetails[0].roomCount} Free rooms right now! <FaBed/>
+                    {props.hotelDetails.roomCount} Free rooms right now! <FaBed/>
                   </b>
                 </p>
                 <p className='text-left'>

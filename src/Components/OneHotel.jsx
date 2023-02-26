@@ -10,38 +10,29 @@ import { Audio } from  'react-loader-spinner'
 const OneHotel = () => {
     const params = useParams();
     const [loading , setLoading] = useState("false")
-    const [hotelDetails,setHotelDetails] = useState([]);
-    const [hotelImages,setHotelImages] = useState([]);
-    const [hotelAminities,setHotelAminities] = useState([]);
-    const [roomTypes,setRoomTypes] = useState([])
+    const [hotelDetails,setHotelDetails] = useState();
     const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://makingcorsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?hotelIds={${params.id}}`, {
+        let response = await fetch(`https://impalaapi.herokuapp.com/hotels/${params.id}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "sandb_H4mKDfmhFDRvZ3zTotHWI9ZjcL4C67hlEMLJagEn",
           }
         })
         let data = await response.json();
-        setHotelImages(data.data[0].images);
-        setRoomTypes(data.data[0].roomTypes)
-        console.log(data.data , "thats the data");
-        setHotelDetails(data.data);
-        setHotelAminities(data.data[0].amenities)
+        setHotelDetails(data.hotelInfo);
         setLoading("false")
       } catch (error) {
         console.log(error);
       }
     }
     useEffect(()=>{
-      setLoading("true")
-      console.log(params.id , "thats the id");
       fetchHotels();
-      console.log(hotelDetails , "thats the hotel details");
-      console.log(hotelImages , "tahts hotel images");
-      console.log(hotelAminities , "tahts hotel aminities");
+      setLoading("true")
     },[])
+    useEffect(()=>{
+      console.log(hotelDetails , "thats the dataaa");
+    },[hotelDetails])
   return (
     <Container fluid className="mb-5">
       {loading === "true" ?  <Row> 
@@ -59,10 +50,10 @@ const OneHotel = () => {
   </Col>
 </Row>  : <Row style={{minHeight:"100vh"}}>
         <Col sm={12}>
-          { hotelDetails.length > 0 && <OneHotelJambot hotelDetails={hotelDetails}/>}
+          { hotelDetails && <OneHotelJambot hotelDetails={hotelDetails}/>}
         </Col>
         <Col sm={12} className='mt-5'>
-         { hotelAminities && hotelImages.length > 0 && roomTypes && hotelDetails.length > 0 && <OneHotelCarousel hotelImages ={hotelImages} hotelDetails={hotelDetails} hotelAminities={hotelAminities} roomTypes ={roomTypes} />}
+         { hotelDetails  && <OneHotelCarousel hotelDetails={hotelDetails} />}
         </Col>
       </Row> }
 

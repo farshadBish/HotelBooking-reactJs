@@ -10,58 +10,40 @@ import { Audio } from "react-loader-spinner";
 const HotelsPage = () => {
   const [hotelName, setHotelName] = useState([]);
   const [name, setName] = useState('');
-  const [country, setCountry] = useState('italy');
-  const [theCountryCode,setTheCountryCode] = useState('ITA')
+  const [country, setCountry] = useState('');
   const [loading , setLoading] = useState(false)
   const [secondLoading , setSecondLoading] = useState(false)
   const location = useLocation();
       const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://makingcorsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=${theCountryCode}&name[like]=${name === '' ? '[SANDBOX]' : name}`, {
+        let response = await fetch(`https://impalaapi.herokuapp.com/hotels${country.length > 0 ? `?country=${country.toLowerCase()}` : ""}${ country.length > 0 && name.length > 0 ? `&name${name.toLowerCase()}` : country.length === 0 && name.length > 0 ? `?name=${name.toLowerCase()}` : ""}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": "sandb_H4mKDfmhFDRvZ3zTotHWI9ZjcL4C67hlEMLJagEn",
-          }
+          },
         })
         let data = await response.json();
-        setHotelName(data.data);
+        setHotelName(data.allHotels);
         console.log(data);
+        console.log(response);
         setLoading(false);
         setSecondLoading(true)
       } catch (error) {
         console.log(error);
       }
     }
-    const countryCode = async () => {
-      try {
-        let response = await fetch(`https://restcountries.com/v3.1/name/${country}`, {
-          method: 'GET',
-          headers: {
-            "Content-Type": "application/json",
-          }
-        })
-        let data = await response.json();
-        setTheCountryCode(data[0].cca3)
-        console.log(data , "the country code is here");
-      } catch (error) {
-        console.log(error);
-      }
-    }
+
     useEffect(()=>{
     const timer =  setTimeout(() => {
         setSecondLoading(false)
       }, 1000);
       return () => clearTimeout(timer);
     },[hotelName])
-    useEffect(()=>{
-      countryCode();
-    },[country])
   useEffect(() => {
     fetchHotels();
     setLoading(true)
     console.log(hotelName, 'this is ur array');
-    console.log(location.pathname);
+    console.log(location.pathname, "the path name");
   }, [])
   return (
     <>
@@ -91,7 +73,7 @@ const HotelsPage = () => {
             <Col lg={5} md={12}>
               <InputGroup className="ml-lg-4 pb-3">
                 <InputGroup.Prepend>
-                  <InputGroup.Text id="inputGroup-sizing-default">Country*</InputGroup.Text>
+                  <InputGroup.Text id="inputGroup-sizing-default">Country</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
                   aria-label="Default"

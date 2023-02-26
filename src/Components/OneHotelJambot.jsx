@@ -26,14 +26,14 @@ const OneHotelJambot = (props) => {
             </Col>
             <Col sm={9} className='py-lg-4 py-md-4'>
                 <div className="border-right ">
-            <p className="text-left"><b>E-mail<FaMailBulk className="ml-2"/> : </b>  {props.hotelDetails[0].emails[0].slice(50,100)}</p>
-            <p className="text-left"><b>Number <FaPhone className="ml-1"/> : </b>    {props.hotelDetails[0].phoneNumbers[0]}</p>
+            <p className="text-left"><b>E-mail<FaMailBulk className="ml-2"/> : </b>  {props.hotelDetails.email}</p>
+            <p className="text-left"><b>Number <FaPhone className="ml-1"/> : </b>    {props.hotelDetails.phoneNumber}</p>
             </div>
             </Col>
             <Col sm={3} className='py-lg-4 py-sm-4 py-md-4'>
                 <div className="">
-            <p className="text-left"><b>Check-in : </b>  {props.hotelDetails[0].checkIn.from}</p>
-            <p className="text-left"><b>check-out : </b> {props.hotelDetails[0].checkOut.to}</p>
+            <p className="text-left"><b>Check-in : </b>  {props.hotelDetails.checkIn}</p>
+            <p className="text-left"><b>check-out : </b> {props.hotelDetails.checkOut}</p>
             </div>
             </Col>
             {/* <Col sm={3} className=''>

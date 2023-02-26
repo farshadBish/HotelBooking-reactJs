@@ -22,16 +22,14 @@ import { Audio } from  'react-loader-spinner'
       
       const fetchHotels = async () =>{
         try {
-          let response = await fetch(`https://makingcorsanywhere.herokuapp.com/https://sandbox.impala.travel/v1/hotels?country[eq]=ITA`,{
+          let response = await fetch(`https://impalaapi.herokuapp.com/hotels`,{
             method : 'GET',
-            headers : {
-              "Accept-Encoding" : "gzip",
-              "Content-Type" : "application/json",
-              "x-api-key": "sandb_H4mKDfmhFDRvZ3zTotHWI9ZjcL4C67hlEMLJagEn",
-            }
+            headers: {
+              "Content-Type": "application/json",
+            },
           })
           let data = await response.json();
-          setHotelName(data.data)
+          setHotelName(data.allHotels)
           console.log(data);
           setLoading("false")
         } catch (error) {
@@ -61,13 +59,13 @@ import { Audio } from  'react-loader-spinner'
       <img
       style={{borderRadius:'20px',minHeight:'400px',maxHeight:'400px',objectFit:'cover'}}
         className="d-block w-100"
-        src={item.images[0].url}
+        src={item.images[0]}
         // {item.images.slice(0,1).map((image,i)=> image )}
         alt="First slide"
       />
       <Carousel.Caption className="carouselDescription">
         <h3>{item.name}</h3>
-        <p className=""><b>{item.address.city}</b></p>
+        <p className=""><b>{item.city}</b></p>
       </Carousel.Caption>
     </Carousel.Item>
 ))}
