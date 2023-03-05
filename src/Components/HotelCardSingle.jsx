@@ -30,7 +30,7 @@ const HotelCardSingle = ({item}) => {
   <Card.Body>
     <Card.Title style={{fontSize:'25px',lineHeight:'2.3rem'}}>{item.name}<br/><span className='px-2 py-1' style={{backgroundColor:'#003580',color:'white',borderRadius:'4px',fontSize:'14px'}}><b>{item.starRating}<FaStar className='mb-1 ml-1'/></b></span></Card.Title>
     <Card.Text>
-     {item.description.slice(0,110)}...
+     {item.description.slice(0,90)}...
     </Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
