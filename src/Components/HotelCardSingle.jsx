@@ -28,7 +28,7 @@ const HotelCardSingle = ({item}) => {
         </div>
   <Card.Img variant="top" src={item.images[0]} style={{height:'270px',objectFit:'cover',borderRadius:'20px'}} className="ml-auto mr-auto " />
   <Card.Body>
-    <Card.Title className='d-flex justify-content-around' style={{fontSize:'25px',lineHeight:'2.3rem',flexDirection:"column",height:"130px"}}><div>{item.name}</div><div className=''><span className='px-2 py-1' style={{backgroundColor:'#003580',color:'white',borderRadius:'4px',fontSize:'15px',}}><b>{item.starRating}<FaStar className='mb-1 ml-1'/></b></span></div></Card.Title>
+    <Card.Title className='d-flex justify-content-around' style={{fontSize:'25px',lineHeight:'2.3rem',flexDirection:"column",minHeight:"130px"}}><div>{item.name}</div><div className=''><span className='px-2 py-1' style={{backgroundColor:'#003580',color:'white',borderRadius:'4px',fontSize:'15px',}}><b>{item.starRating}<FaStar className='mb-1 ml-1'/></b></span></div></Card.Title>
     <Card.Text>
      {item.description.slice(0,50)}...
     </Card.Text>
