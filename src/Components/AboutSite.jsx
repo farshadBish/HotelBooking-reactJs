@@ -4,9 +4,9 @@ import {animated , useSpring} from "@react-spring/web";
 import { FaChevronDown } from "react-icons/fa";
 import { useEffect } from "react";
 const AboutSite = () => {
-    useEffect(()=>{
-        alert("Site is currently updating, some features are improving please visit later too when updates are done :) ")
-      })
+    // useEffect(()=>{
+    //     alert("Site is currently updating, some features are improving please visit later too when updates are done :) ")
+    //   })
 
     const firstSpring = useSpring({
         from : { opacity:0 , x:-200,},

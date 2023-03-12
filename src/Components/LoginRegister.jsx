@@ -4,13 +4,40 @@ import { Col, Container, Form, Navbar, Row, Button, Badge } from "react-bootstra
 import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import "../styles/RegisterPage.css";
+import { useFormik } from "formik";
 <link
   rel="stylesheet"
   type="text/css"
   href="//fonts.googleapis.com/css?family=Open+Sans"
 />;
 
+
+
 const LoginRegister = () => {
+
+  // formik
+const validate = (values) => {
+  const errors = {}
+
+  if (!values.email) {
+    errors.email = 'Required'
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address'
+  }
+
+  return errors
+}
+
+const formik = useFormik({
+  initialValues: {
+    email: '',
+  },
+  validate,
+  onSubmit: (values) => {
+    alert(JSON.stringify(values, null, 2))
+  },
+})
+
   const [isLoading,setIsLoading] = useState(false)
   // for changing between sign up and log in
   const [haveAccount, setHaveAccount] = useState(false);
@@ -48,10 +75,7 @@ const LoginRegister = () => {
         } else {
           console.log("error with response");
         }
-      }else if(!isValidEmail(email)){
-        console.log("hi");
       }
-      
       else{
         setIsFilled(false)
       }
@@ -112,9 +136,9 @@ const LoginRegister = () => {
   }, [isLoading]);
 
 
-  function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
+  // function isValidEmail(email) {
+  //   return /\S+@\S+\.\S+/.test(email);
+  // }
 
 
   return (
