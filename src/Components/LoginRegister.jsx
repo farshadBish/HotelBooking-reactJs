@@ -174,7 +174,7 @@ const formik = useFormik({
             <div
               className=" pl-2 pr-2 pt-4 p-md-5 shadow-lg mx-auto signupContainer"
             >
-              <Form>
+              <Form onSubmit={registerPost}>
                 <Row>
                   <Col lg={6} xs={12} className="">
                     <Form.Group controlId="formBasicEmail" className="">
@@ -247,7 +247,7 @@ const formik = useFormik({
                     </Form.Group>
                     </Col>
                     <Col xs={12}>
-                    <Button variant="primary" type="submit" onClick={registerPost} >
+                    <Button variant="primary" type="submit" >
                       Sign up
                     </Button>
                     </Col>
