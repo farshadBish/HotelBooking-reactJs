@@ -37,7 +37,7 @@ const OneHotel = () => {
     <Container fluid className="mb-5">
       {loading === "true" ?  <Row> 
   <Col xs={12}>
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
 <Audio
     height = "100"
     width = "100"

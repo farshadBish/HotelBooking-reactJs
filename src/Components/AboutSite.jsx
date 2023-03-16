@@ -92,7 +92,7 @@ const AboutSite = () => {
                 <Col md={12} lg={6} className="pl-0 pr-0 mb-5">
                 <div className="secondPicSide d-flex align-items-center justify-content-center text-white text-left">
                 <span><h4><b>Thanks for your time and attention :)</b></h4><br/>
-                <h5>If you intrested you can have a look at my second project by clicking <a href="https://rusty.farshad.eu" rel="noreferrer" target="_blank" style={{textDecoration:"none",color:"white"}}><b>Here.</b><div className=""></div></a></h5></span>
+                <h5>If you intrested you can have a look at my portfolio <a href="https://portfolio.farshad.eu" rel="noreferrer" target="_blank" style={{textDecoration:"none",color:"white"}}><b>Here.</b><div className=""></div></a></h5></span>
               </div>
                 </Col>
             </Row>

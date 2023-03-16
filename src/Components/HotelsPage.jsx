@@ -47,9 +47,9 @@ const HotelsPage = () => {
   }, [])
   return (
     <>
-    {loading===true ? <Row > 
+    {loading===true ? 
   <Col xs={12}>
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center align-items-center" style={{height:"100vh"}}>
 <Audio
     height = "100"
     width = "100"
@@ -59,8 +59,7 @@ const HotelsPage = () => {
     wrapperStyle
   />
   </div>
-  </Col>
-</Row> : <Container fluid>
+  </Col>: <Container fluid>
       <Row>
         <Col sm={12}>
           <JambotHotelsPage />
@@ -103,7 +102,7 @@ const HotelsPage = () => {
         </div>
         {secondLoading=== true ?
   <Col xs={12}>
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center" style={{height:"100vh"}}>
 <Audio
     height = "100"
     width = "100"
