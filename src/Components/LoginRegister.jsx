@@ -20,9 +20,33 @@ const validate = (values) => {
   const errors = {}
 
   if (!values.email) {
-    errors.email = 'Required'
+    errors.email = 'Email Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = 'Invalid email address'
+  }
+
+  if (!values.username) {
+    errors.username = 'Username Required'
+  } else if (values.username.length < 4) {
+    errors.username = 'Username must be more than 4 characters'
+  } else if (12 < values.username.length){
+    errors.username = 'Username must be less than 12 characters'
+  }
+  
+  if (!values.password) {
+    errors.password = 'password Required'
+  } else if (values.password.length < 4) {
+    errors.password = 'password must be more than 4 characters'
+  } else if (12 < values.password.length){
+    errors.password = 'password must be less than 12 characters'
+  }
+
+  if (!values.address) {
+    errors.address = 'address Required'
+  } else if (values.address.length < 10) {
+    errors.address = 'address must be more than 10 characters'
+  } else if (200 < values.address.length){
+    errors.address = 'address must be less than 200 characters'
   }
 
   return errors
@@ -31,10 +55,36 @@ const validate = (values) => {
 const formik = useFormik({
   initialValues: {
     email: '',
+    username:'',
+    password:'',
+    address:'',
   },
   validate,
-  onSubmit: (values) => {
-    alert(JSON.stringify(values, null, 2))
+  onSubmit: async (values) => {
+    try {
+      // if(username !== '' && password !== '' && email !== '' && address !== ''){
+      let response = await fetch('https://impalaapi.herokuapp.com/users', {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json",
+        },
+        body : JSON.stringify(values)
+      })
+        if(response.ok){
+          let data = await response.json()
+          console.log(data , "voilaaa the data");
+          setHaveAccount(true)
+        } else {
+          console.log("error with response");
+        }
+      // }
+      // else{
+        // setIsFilled(false)
+      // }
+    } catch (error) {
+      console.log(error , "eerrrror bro");
+      setHaveAccount(false)
+    }
   },
 })
 
@@ -54,36 +104,35 @@ const formik = useFormik({
   const [password , setpassword] = useState('');
   const [address,setAddress] = useState('')
 
-  const registerPost = async (e) => {
-    e.preventDefault();
-    const userInfos = {username , email , password , address}
-    console.log(userInfos);
-    try {
-      setIsFilled(true)
-      if(username !== '' && password !== '' && email !== '' && address !== ''){
-      let response = await fetch('https://impalaapi.herokuapp.com/users', {
-        method: "POST",
-        headers: {
-            "Content-Type" : "application/json",
-        },
-        body : JSON.stringify(userInfos)
-      })
-        if(response.ok){
-          let data = await response.json()
-          console.log(data , "voilaaa the data");
-          setHaveAccount(true)
-        } else {
-          console.log("error with response");
-        }
-      }
-      else{
-        setIsFilled(false)
-      }
-    } catch (error) {
-      console.log(error , "eerrrror bro");
-      setHaveAccount(false)
-    }
-  }
+  // const registerPost = async (e) => {
+  //   e.preventDefault();
+  //   const userInfos = {username , email , password , address}
+  //   console.log(userInfos);
+  //   try {
+  //     if(username !== '' && password !== '' && email !== '' && address !== ''){
+  //     let response = await fetch('https://impalaapi.herokuapp.com/users', {
+  //       method: "POST",
+  //       headers: {
+  //           "Content-Type" : "application/json",
+  //       },
+  //       body : JSON.stringify(userInfos)
+  //     })
+  //       if(response.ok){
+  //         let data = await response.json()
+  //         console.log(data , "voilaaa the data");
+  //         setHaveAccount(true)
+  //       } else {
+  //         console.log("error with response");
+  //       }
+  //     }
+  //     else{
+  //       setIsFilled(false)
+  //     }
+  //   } catch (error) {
+  //     console.log(error , "eerrrror bro");
+  //     setHaveAccount(false)
+  //   }
+  // }
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -174,72 +223,93 @@ const formik = useFormik({
             <div
               className=" pl-2 pr-2 pt-4 p-md-5 shadow-lg mx-auto signupContainer"
             >
-              <Form onSubmit={registerPost}>
+              <Form onSubmit={formik.handleSubmit}>
                 <Row>
                   <Col lg={6} xs={12} className="">
-                    <Form.Group controlId="formBasicEmail" className="">
+                    <Form.Group  className="">
                       <Form.Label>
                         <b>Email address</b>
                       </Form.Label>
                       <Form.Control
+                        id="email"
+                        name="email"
                         type="email"
                         placeholder="Example : jack@gmail.com"
-                        value={email}
-                        onChange={(e)=> setemail(e.target.value)}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
                         style={{width:"100%"}}
                         className="ml-auto mr-auto"
                       />
                       <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                      {formik.errors.email ?<Col xs={12}> <Badge className="p-3 mt-4" variant="danger">{formik.touched.email && formik.errors.email}</Badge></Col> : null}
                       </Form.Text>
                     </Form.Group>
                   </Col>
                   <Col lg={3} xs={12} className="pr-lg-0">
-                    <Form.Group controlId="formBasicUser" className="">
+                    <Form.Group className="">
                       <Form.Label>
                         <b>User Name</b>
                       </Form.Label>
-                      <Form.Control 
-                      type="text"
+                      <Form.Control
+                       id="username"
+                       name="username"
+                       type="text"
                        placeholder="Example : jack" 
-                       value={username}
-                       onChange={(e)=> setusername(e.target.value)}
+                       onChange={formik.handleChange}
+                       onBlur={formik.handleBlur}
+                       value={formik.values.username}
                        style={{width:"100%"}}
                        className="ml-auto mr-auto"/>
+                       <Form.Text className="text-muted">
+                      {formik.errors.username ?<Col xs={12}> <Badge className="p-3 mt-4" variant="danger">{formik.touched.username && formik.errors.username}</Badge></Col> : null}
+                      </Form.Text>
                        
                     </Form.Group>
                   </Col>
                   <Col lg={3} xs={12} className="">
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group>
                       <Form.Label>
                         <b>Password</b>
                       </Form.Label>
                       <Form.Control 
-                      type="password"
+                       id="password"
+                       name="password"
+                       type="password"
                        placeholder="Password" 
-                       value={password}
-                       onChange={(e)=> setpassword(e.target.value)}
+                       onChange={formik.handleChange}
+                       onBlur={formik.handleBlur}
+                       value={formik.values.password}
                        style={{width:"100%"}}
                        className="ml-auto mr-auto"/>
+                       <Form.Text className="text-muted">
+                      {formik.errors.password ?<Col xs={12}> <Badge className="p-3 mt-4" variant="danger">{formik.touched.password && formik.errors.password}</Badge></Col> : null}
+                      </Form.Text>
                     </Form.Group>
                     </Col>
                     <Col lg={6} xs={12}>
-                    <Form.Group controlId="formBasicAddress" className="">
+                    <Form.Group className="">
                       <Form.Label>
                         <b>Address</b>
                       </Form.Label>
                       <Form.Control
+                        id="address"
+                        name="address"
                         type="text"
                         placeholder="rue de la caserne n20"
-                        value={address}
-                        onChange={(e)=> setAddress(e.target.value)}
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        value={formik.values.address}
                         style={{width:"100%"}}  
                         className="ml-auto mr-auto mb-3"
                       />
+                      <Form.Text className="text-muted">
+                      {formik.errors.address ?<Col xs={12}> <Badge className="p-3 mt-4" variant="danger">{formik.touched.address && formik.errors.address}</Badge></Col> : null}
+                      </Form.Text>
                     </Form.Group>
                     </Col> 
                     <Col xs={12}>
-                    <Form.Group controlId="formBasicCheckbox">
+                    <Form.Group>
                       <Form.Check
                         type="checkbox"
                         label="I agree to the terms and conditions"
@@ -251,9 +321,6 @@ const formik = useFormik({
                       Sign up
                     </Button>
                     </Col>
-                    {isFilled === false ?<Col xs={12}>
-                    <Badge className="p-3 mt-4" variant="danger">Please fill all the requirements!</Badge>{' '}
-                    </Col> : <></> }
                     <Col xs={12}>
                     <p
                       onClick={() => setHaveAccount(true)}
@@ -347,7 +414,7 @@ const formik = useFormik({
             <Form>
               <Row>
                 <Col md={12} xs={12} className="">
-                  <Form.Group controlId="formBasicEmail" className="">
+                  <Form.Group className="">
                     <Form.Label>
                       <b>Email address</b>
                     </Form.Label>
@@ -365,7 +432,7 @@ const formik = useFormik({
                   </Form.Group>
                 </Col>
                 <Col md={12} xs={12} className="m-auto">
-                  <Form.Group controlId="formBasicPassword">
+                  <Form.Group>
                     <Form.Label>
                       <b>Password</b>
                     </Form.Label>
@@ -377,7 +444,7 @@ const formik = useFormik({
                     style={{width:"90%"}}
                     className="ml-auto mr-auto"/>
                   </Form.Group>
-                  <Form.Group controlId="formBasicCheckbox">
+                  <Form.Group>
                     <Form.Check
                       type="checkbox"
                       label="Save email & password"
