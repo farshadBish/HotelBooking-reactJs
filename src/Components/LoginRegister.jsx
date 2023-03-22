@@ -62,6 +62,7 @@ const LoginRegister = () => {
     },
     validate,
     onSubmit: async (values) => {
+      setBtnLoading(true)
       try {
         // if(username !== '' && password !== '' && email !== '' && address !== ''){
         let response = await fetch('https://impalaapi.herokuapp.com/users', {
@@ -74,8 +75,10 @@ const LoginRegister = () => {
         if (response.ok) {
           let data = await response.json()
           console.log(data, "voilaaa the data");
+          setBtnLoading(false)
           setHaveAccount(true)
         } else {
+          setBtnLoading(false)
           console.log("error with response");
         }
         // }
@@ -90,7 +93,7 @@ const LoginRegister = () => {
   })
 
   const [isLoading, setIsLoading] = useState(false)
-  const [btnLoading, setBtnLoading] = useState(true)
+  const [btnLoading, setBtnLoading] = useState(false)
   // for changing between sign up and log in
   const [haveAccount, setHaveAccount] = useState(false);
 
@@ -326,7 +329,7 @@ const LoginRegister = () => {
                       ariaLabel="blocks-loading"
                       wrapperStyle={{}}
                       wrapperClass="blocks-wrapper"
-                      colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                      colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', 'purple']}
                     /> : <Button variant="primary" type="submit" className="signBtn">
                       Sign up
                     </Button>}
