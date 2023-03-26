@@ -333,11 +333,11 @@ const HotelBooking = () => {
                       <Col xs={12} className="">
                         <div
                           className="box-1 d-flex justify-content-center mt-5"
-                          onClick={goToCatagory}
                         >
                           <a href="/" style={{ textDecoration: "none" }}>
                             <div
                               className="btn btn-one pt-2 pb-2"
+                              onClick={goToCatagory}
                             >
                               <span style={{ color: "white" }}>
                                 Continue to Rooms

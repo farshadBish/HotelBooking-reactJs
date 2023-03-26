@@ -56,7 +56,7 @@ const SingleBookedRoom = (props) =>{
                               className="BrowseBtn text-dark"
                               onClick={removeBooking}
                             >
-                              <b>Remove</b>
+                              <b>Cancel</b>
                             </button>
                 </Col>
             </Row>
