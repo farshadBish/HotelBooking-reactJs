@@ -19,7 +19,7 @@ const SingleAllUsersBookings = (props) =>{
             }
           );
           if(response.ok){
-            window.location.reload()
+            props.setAccountRefresh(!props.accountRefresh)
           }else{
             console.log("Deleteing Error");
           }

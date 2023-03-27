@@ -20,7 +20,7 @@ const SingleBookedRoom = (props) =>{
             }
           );
           if(response.ok){
-            window.location.reload()
+            props.setDomRefresh(!props.domRefresh);
           }else{
             console.log("Deleting Error");
           }

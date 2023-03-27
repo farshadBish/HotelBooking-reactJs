@@ -209,6 +209,17 @@ const MyProfile = () => {
             //   }
             // };
 
+            const [domRefresh,setDomRefresh] = useState(false);
+
+            useEffect(()=>{
+              bookingDetails();
+            },[domRefresh])
+
+            const [accountRefresh,setAccountRefresh] = useState(false)
+
+            useEffect(()=>{
+              getAllUsers();
+            },[accountRefresh])
     return(
         <>
           {deletingSuccessful === false ?   <Container className="mb-5">         <Row className="mt-5 mainContainerAnimation" style={{backgroundColor:"#E4D8E6",minHeight:"75vh",borderRadius:"20px"}}>
@@ -312,7 +323,7 @@ const MyProfile = () => {
          <h3 className="display-4 text-left mb-3 connentingContainer pl-4 py-2"><b>Your Bookings</b></h3>
               </Col>
           {bookedRooms.length === 0 ?<Col xs={12}> <div className="text-dark"><b>You have no rooms booked in progress</b></div></Col> : bookedRooms.map((item,i) => (
-                <SingleBookedRoom item={item} key={i}/>
+                <SingleBookedRoom item={item} key={i} domRefresh={domRefresh} setDomRefresh={setDomRefresh}/>
               ))}
             </Row>
           </Container>
@@ -325,7 +336,7 @@ const MyProfile = () => {
          <h3 className="display-4 text-left mb-3 connentingContainer pl-4 py-2"><b>All <span>Accounts</span></b></h3>
               </Col>
               {allUsers.map((item,i)=>(
-                <SingleUser item={item} key={i} myName={userData.username} myRole={userData.role}/>
+                <SingleUser item={item} key={i} myName={userData.username} myRole={userData.role} accountRefresh={accountRefresh} setAccountRefresh={setAccountRefresh}/>
               ))}
             </Row>
           </Container>
@@ -337,7 +348,7 @@ const MyProfile = () => {
          <h3 className="display-4 text-left mb-3 connentingContainer pl-4 py-2"><b>All Booked <span>Rooms</span></b></h3>
               </Col>
               {allUsers.map((item,i) => item.roomsBooked.map((aRoom,x)=>(
-                <SingleAllUsersBookings item={item} items={aRoom} key={x}/>
+                <SingleAllUsersBookings item={item} items={aRoom} key={x} accountRefresh={accountRefresh} setAccountRefresh={setAccountRefresh}/>
               )))}
             </Row>
           </Container>

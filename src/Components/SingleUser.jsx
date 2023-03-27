@@ -20,7 +20,7 @@ const SingleUser = (props) =>{
             }
           );
           if(response.ok){
-            window.location.reload()
+            props.setAccountRefresh(!props.accountRefresh)
           }
         } catch (error) {
           console.log(error);

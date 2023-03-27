@@ -42,7 +42,6 @@ const HotelsPage = () => {
   useEffect(() => {
     setLoading(true)
     fetchHotels();
-    console.log(hotelName, 'this is ur array');
     console.log(location.pathname, "the path name");
     console.log(options);
   }, [])
