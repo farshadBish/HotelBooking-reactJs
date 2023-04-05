@@ -77,7 +77,7 @@ const picChanger = (picUrl) => {
     <Jumbotron
       fluid
       className="navbarWidth jambPic pt-0"
-      style={{ borderRadius: "20px" }}
+      style={{ borderRadius: "20px",marginBottom:"20rem"}}
     >
       <Container className="pl-0 ml-0">
         <Row className="text-left">
@@ -111,7 +111,7 @@ const picChanger = (picUrl) => {
             Here we provide you the available hotels and the weather temperature
             of your desired city.
           </p>
-          <animated.img onClick={()=>console.log("dick")} style={firstSpring} src={secondPic} alt="" className="radius ml-4" />
+          <animated.img onClick={picChanger} style={firstSpring} src={secondPic} alt="" className="radius ml-4" />
           <animated.img  style={secondSpring} src={thirdPic} alt="" className="radius" />
           <animated.img  style={thirdSpring} src={forthPic} alt="" className="radius smallPicDisapear" />
           <animated.img  style={forthSpring} src={fifthPic}  alt="" className="radius smallPicDisapear" />

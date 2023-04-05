@@ -42,8 +42,7 @@ import { Audio } from  'react-loader-spinner'
       }
    return (
     <>
-    <Container>
-      <div style={{marginTop:'15rem'}} className='contain'>
+    <Container className='contain'>
           {loading === "false" ?         
           <Row>
         <Col className="mb-4 mb-md-4">
@@ -86,7 +85,6 @@ import { Audio } from  'react-loader-spinner'
   </div>
   </Col>
 </Row> }
-</div>
 </Container>
 </>
    )
