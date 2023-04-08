@@ -71,11 +71,11 @@ const [fifthTrigger,setFifthTrigger] = useState(false);
 
 // pic change
 const [firstPic,setFirstPic] = useState("https://media.discordapp.net/attachments/713873647550464000/991280660314591303/victorops-logo-clr.png")
-const [secondPic,setSecondPic] = useState("small-1.jpg")
-const [thirdPic,setThirdPic] = useState("hotelPic.jpg")
-const [forthPic,setForthPic] = useState("Small-3.jpg")
-const [fifthPic,setFifthPic] = useState("https://cdn.discordapp.com/attachments/685210402577055758/1046810021469630464/Small-4.jpg")
-const [sixthPic,setSixthPic] = useState("https://cdn.discordapp.com/attachments/685210402577055758/1046810049223327854/Small-5.jpg")
+const [secondPic,setSecondPic] = useState("hotelPic.jpg")
+const [thirdPic,setThirdPic] = useState("small-1.jpg")
+const [forthPic,setForthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094355274636206100/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg")
+const [fifthPic,setFifthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094355703755448470/reisetopia-aI6Su7Mu9Ro-unsplash.jpg")
+const [sixthPic,setSixthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094356887128002590/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg")
 const picChanger = (e,main,first,second,third,forth) => {
   setStarters(false)
   main(true)
@@ -87,7 +87,7 @@ const picChanger = (e,main,first,second,third,forth) => {
   return (
     <Jumbotron
       fluid
-      className="navbarWidth jambPic pt-0"
+      className={firstTrigger===true ? "navbarWidth jambPic pt-0" : secondTrigger===true ? "navbarWidth jambPic2 pt-0" : thirdTrigger===true ? "navbarWidth jambPic3 pt-0" : forthTrigger===true ? "navbarWidth jambPic4 pt-0" : fifthTrigger===true ? "navbarWidth jambPic5 pt-0" : "navbarWidth jambPic pt-0"}
       style={{ borderRadius: "20px",marginBottom:"20rem"}}
     >
       <Container className="pl-0 ml-0">
