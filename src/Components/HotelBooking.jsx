@@ -608,7 +608,7 @@ const HotelBooking = () => {
                           style={{backgroundColor:"transparent",border:"gray 1px solid",borderRadius:"3px"}}
                           className="p-1 nameOnCards" 
                           onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {
+                            if (!/[a-z- ]/.test(event.key)) {
                               event.preventDefault();
                             }
                           }}

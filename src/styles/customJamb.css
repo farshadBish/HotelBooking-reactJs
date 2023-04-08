@@ -7,7 +7,7 @@
     animation: mymove3 1.5s;
 }
 .jambPic2{
-    background-image: url(/public/hotelPic.jpg);
+    background-image: url(/public/small-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:bottom;
@@ -15,14 +15,14 @@
     animation: mymove3 1.5s;
 }
 .jambPic3{
-    background-image: url(/public/hotelPic.jpg);
+    background-image: url(/public/Small-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:bottom;
     height: 55vh;
     animation: mymove3 1.5s;
 }.jambPic4{
-    background-image: url(/public/hotelPic.jpg);
+    background-image: url(/public/Small-3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:bottom;
@@ -30,7 +30,15 @@
     animation: mymove3 1.5s;
 }
 .jambPic5{
-    background-image: url(/public/hotelPic.jpg);
+    background-image: url(/public/Small-4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:bottom;
+    height: 55vh;
+    animation: mymove3 1.5s;
+}
+.jambPic6{
+    background-image: url(/public/Small-5.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:bottom;

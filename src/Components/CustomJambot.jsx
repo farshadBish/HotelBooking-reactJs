@@ -11,6 +11,8 @@ import {animated , useSpring} from "@react-spring/web";
 import { useState } from "react";
 
 function CustomJambot() {
+  
+  const [starters,setStarters] = useState(true)
 
   const firstSpring = useSpring({
     from : { scale: 0 , rotate: 0},
@@ -56,22 +58,31 @@ const fifthSpring = useSpring({
   },
   delay: 500
 });
+const [active,setActive] = useState(true)
+
+const clickSpring = useSpring({
+  
+})
+const [firstTrigger,setFirstTrigger] = useState(false);
+const [secondTrigger,setSecondTrigger] = useState(false);
+const [thirdTrigger,setThirdTrigger] = useState(false);
+const [forthTrigger,setForthTrigger] = useState(false);
+const [fifthTrigger,setFifthTrigger] = useState(false);
+
 // pic change
 const [firstPic,setFirstPic] = useState("https://media.discordapp.net/attachments/713873647550464000/991280660314591303/victorops-logo-clr.png")
 const [secondPic,setSecondPic] = useState("small-1.jpg")
-const [thirdPic,setThirdPic] = useState("Small-2.jpg")
+const [thirdPic,setThirdPic] = useState("hotelPic.jpg")
 const [forthPic,setForthPic] = useState("Small-3.jpg")
 const [fifthPic,setFifthPic] = useState("https://cdn.discordapp.com/attachments/685210402577055758/1046810021469630464/Small-4.jpg")
 const [sixthPic,setSixthPic] = useState("https://cdn.discordapp.com/attachments/685210402577055758/1046810049223327854/Small-5.jpg")
-
-const [changedPic,setChangedPic] = useState(null)
-const [active,setActive] = useState(false)
-const picChanger = (picUrl) => {
-  picUrl="dick"
-  console.log(picUrl);
-  setActive(true);
-  setChangedPic(picUrl);
-  setFirstPic(changedPic);
+const picChanger = (e,main,first,second,third,forth) => {
+  setStarters(false)
+  main(true)
+  first(false)
+  second(false)
+  third(false)
+  forth(false)
 }
   return (
     <Jumbotron
@@ -111,11 +122,11 @@ const picChanger = (picUrl) => {
             Here we provide you the available hotels and the weather temperature
             of your desired city.
           </p>
-          <animated.img onClick={picChanger} style={firstSpring} src={secondPic} alt="" className="radius ml-4" />
-          <animated.img  style={secondSpring} src={thirdPic} alt="" className="radius" />
-          <animated.img  style={thirdSpring} src={forthPic} alt="" className="radius smallPicDisapear" />
-          <animated.img  style={forthSpring} src={fifthPic}  alt="" className="radius smallPicDisapear" />
-          <animated.img  style={fifthSpring} src={sixthPic} alt="" className="radius smallPicDisapear" />
+          <animated.img onClick={(e)=>picChanger(e,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? firstSpring  : {}}  src={secondPic} alt="" className="radius ml-4" />
+          <animated.img onClick={(e)=>picChanger(e,setSecondTrigger,setFirstTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? secondSpring : {}}  src={thirdPic}  alt="" className="radius" />
+          <animated.img onClick={(e)=>picChanger(e,setThirdTrigger,setFirstTrigger,setSecondTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? thirdSpring  : {}}  src={forthPic}  alt="" className="radius smallPicDisapear" />
+          <animated.img onClick={(e)=>picChanger(e,setForthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setFifthTrigger)}  style={starters===true ? forthSpring  : {}}  src={fifthPic}  alt="" className="radius smallPicDisapear" />
+          <animated.img onClick={(e)=>picChanger(e,setFifthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger)}  style={starters===true ? fifthSpring  : {}}  src={sixthPic}  alt="" className="radius smallPicDisapear" />
         </div>
       </Container>
     </Jumbotron>
