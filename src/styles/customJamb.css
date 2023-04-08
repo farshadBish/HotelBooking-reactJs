@@ -10,7 +10,7 @@
     background-image: url(https://cdn.discordapp.com/attachments/713873647550464000/1094352056669716490/visualsofdana-T5pL6ciEn-I-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:bottom;
+    background-position:center;
     height: 55vh;
     animation: mymove3 1.5s;
 }
@@ -18,7 +18,7 @@
     background-image: url(https://cdn.discordapp.com/attachments/713873647550464000/1094355274636206100/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:bottom;
+    background-position:center;
     height: 55vh;
     animation: mymove3 1.5s;
 }.jambPic4{
@@ -33,7 +33,7 @@
     background-image: url(https://cdn.discordapp.com/attachments/713873647550464000/1094356887128002590/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:bottom;
+    background-position:center;
     height: 55vh;
     animation: mymove3 1.5s;
 }
