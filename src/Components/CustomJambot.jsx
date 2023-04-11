@@ -122,11 +122,11 @@ const picChanger = (e,main,first,second,third,forth) => {
             Here we provide you the available hotels and the weather temperature
             of your desired city.
           </p>
-          <animated.img onClick={(e)=>picChanger(e,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? firstSpring  : {}}  src={secondPic} alt="" className="radius ml-4" />
-          <animated.img onClick={(e)=>picChanger(e,setSecondTrigger,setFirstTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? secondSpring : {}}  src={thirdPic}  alt="" className="radius" />
-          <animated.img onClick={(e)=>picChanger(e,setThirdTrigger,setFirstTrigger,setSecondTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? thirdSpring  : {}}  src={forthPic}  alt="" className="radius smallPicDisapear" />
-          <animated.img onClick={(e)=>picChanger(e,setForthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setFifthTrigger)}  style={starters===true ? forthSpring  : {}}  src={fifthPic}  alt="" className="radius smallPicDisapear" />
-          <animated.img onClick={(e)=>picChanger(e,setFifthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger)}  style={starters===true ? fifthSpring  : {}}  src={sixthPic}  alt="" className="radius smallPicDisapear" />
+          <animated.img onClick={(e)=>picChanger(e,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? firstSpring  : {}}  src={secondPic} alt="" className="radius ml-4 shadow-lg" />
+          <animated.img onClick={(e)=>picChanger(e,setSecondTrigger,setFirstTrigger,setThirdTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? secondSpring : {}}  src={thirdPic}  alt="" className="radius shadow-lg" />
+          <animated.img onClick={(e)=>picChanger(e,setThirdTrigger,setFirstTrigger,setSecondTrigger,setForthTrigger,setFifthTrigger)}  style={starters===true ? thirdSpring  : {}}  src={forthPic}  alt="" className="radius smallPicDisapear shadow-lg" />
+          <animated.img onClick={(e)=>picChanger(e,setForthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setFifthTrigger)}  style={starters===true ? forthSpring  : {}}  src={fifthPic}  alt="" className="radius smallPicDisapear shadow-lg" />
+          <animated.img onClick={(e)=>picChanger(e,setFifthTrigger,setFirstTrigger,setSecondTrigger,setThirdTrigger,setForthTrigger)}  style={starters===true ? fifthSpring  : {}}  src={sixthPic}  alt="" className="radius smallPicDisapear shadow-lg" />
         </div>
       </Container>
     </Jumbotron>
