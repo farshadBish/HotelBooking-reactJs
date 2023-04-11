@@ -9,19 +9,19 @@ import "../styles/customNavbar.css";
 import "../styles/customJamb.css";
 import {animated , useSpring} from "@react-spring/web";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function CustomJambot() {
   
   const [starters,setStarters] = useState(true)
-
   const firstSpring = useSpring({
     from : { scale: 0 , rotate: 0},
     to: [{scale: 1.2,rotate: 180},
-    {scale: 1,rotate: 360}],
-    config: {
+      {scale: 1,rotate: 360}],
+      config: {
         duration: 800
-    },
-});
+      },
+    });
 const secondSpring = useSpring({
   from : { scale: 0 , rotate: 0},
   to: [{scale: 1.2,rotate: 180},
