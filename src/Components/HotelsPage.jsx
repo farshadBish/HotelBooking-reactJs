@@ -1,7 +1,7 @@
 import { Button, Col, Container, Dropdown, DropdownButton, FormControl, InputGroup, Row } from "react-bootstrap"
 import JambotHotelsPage from "./JambotHotelsPage"
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import HotelCard from "./HotelCard";
 import '../styles/customNavbar.css'
 import '../styles/customJamb.css'
@@ -16,7 +16,7 @@ const HotelsPage = () => {
   const [loading , setLoading] = useState(false)
   const [secondLoading , setSecondLoading] = useState(false)
   const location = useLocation();
-      const fetchHotels = async () => {
+      const fetchHotels = useCallback( async () => {
       try {
         let response = await fetch(`https://impalaapi.herokuapp.com/hotels${country.length > 0 ? `?country=${country.toLowerCase()}` : ""}${ country.length > 0 && name.length > 0 ? `&name${name.toLowerCase()}` : country.length === 0 && name.length > 0 ? `?name=${name.toLowerCase()}` : ""}`, {
           method: 'GET',
@@ -31,8 +31,9 @@ const HotelsPage = () => {
       } catch (error) {
         console.log(error);
       }
-    }
+    },[country,name])
 
+    const hotelsFetched = useMemo(()=> fetchHotels(),[])
     useEffect(()=>{
     const timer =  setTimeout(() => {
         setSecondLoading(false)
@@ -41,7 +42,7 @@ const HotelsPage = () => {
     },[hotelName])
   useEffect(() => {
     setLoading(true)
-    fetchHotels();
+    // fetchHotels();
     console.log(location.pathname, "the path name");
     console.log(options);
   }, [])

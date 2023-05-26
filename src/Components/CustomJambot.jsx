@@ -9,8 +9,6 @@ import "../styles/customNavbar.css";
 import "../styles/customJamb.css";
 import {animated , useSpring} from "@react-spring/web";
 import { useState } from "react";
-import { useEffect } from "react";
-
 function CustomJambot() {
   
   const [starters,setStarters] = useState(true)
@@ -58,11 +56,6 @@ const fifthSpring = useSpring({
   },
   delay: 500
 });
-const [active,setActive] = useState(true)
-
-const clickSpring = useSpring({
-  
-})
 const [firstTrigger,setFirstTrigger] = useState(false);
 const [secondTrigger,setSecondTrigger] = useState(false);
 const [thirdTrigger,setThirdTrigger] = useState(false);
@@ -70,12 +63,12 @@ const [forthTrigger,setForthTrigger] = useState(false);
 const [fifthTrigger,setFifthTrigger] = useState(false);
 
 // pic change
-const [firstPic,setFirstPic] = useState("https://media.discordapp.net/attachments/713873647550464000/991280660314591303/victorops-logo-clr.png")
-const [secondPic,setSecondPic] = useState("hotelPic.jpg")
-const [thirdPic,setThirdPic] = useState("small-1.jpg")
-const [forthPic,setForthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094355274636206100/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg")
-const [fifthPic,setFifthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094355703755448470/reisetopia-aI6Su7Mu9Ro-unsplash.jpg")
-const [sixthPic,setSixthPic] = useState("https://cdn.discordapp.com/attachments/713873647550464000/1094356887128002590/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg")
+const firstPic= "https://media.discordapp.net/attachments/713873647550464000/991280660314591303/victorops-logo-clr.png"
+const secondPic= "hotelPic.jpg"
+const thirdPic= "small-1.jpg"
+const forthPic= "https://cdn.discordapp.com/attachments/713873647550464000/1094355274636206100/point3d-commercial-imaging-ltd-oxeCZrodz78-unsplash.jpg"
+const fifthPic= "https://cdn.discordapp.com/attachments/713873647550464000/1094355703755448470/reisetopia-aI6Su7Mu9Ro-unsplash.jpg"
+const sixthPic= "https://cdn.discordapp.com/attachments/713873647550464000/1094356887128002590/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg"
 const picChanger = (e,main,first,second,third,forth) => {
   setStarters(false)
   main(true)
