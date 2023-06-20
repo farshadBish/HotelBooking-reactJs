@@ -13,7 +13,7 @@ const OneHotel = () => {
     const [hotelDetails,setHotelDetails] = useState();
     const fetchHotels = async () => {
       try {
-        let response = await fetch(`https://impalaapi.herokuapp.com/hotels/${params.id}`, {
+        let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/hotels/${params.id}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",

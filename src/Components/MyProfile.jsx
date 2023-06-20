@@ -48,7 +48,7 @@ const MyProfile = () => {
           const fetchHotels = async () => {
             try {
               let response = await fetch(
-                `https://impalaapi.herokuapp.com/users/me`,
+                `https://customhotels-494f8951a67d.herokuapp.com/users/me`,
                 {
                   method: "GET",
                   headers: {
@@ -69,7 +69,7 @@ const MyProfile = () => {
           const bookingDetails = async () => {
             try {
               let response = await fetch(
-                `https://impalaapi.herokuapp.com/users/me/bookedRooms`,
+                `https://customhotels-494f8951a67d.herokuapp.com/users/me/bookedRooms`,
                 {
                   method: "GET",
                   headers: {
@@ -90,7 +90,7 @@ const MyProfile = () => {
             e.preventDefault()
             const userInfos = {username , email , address}
             try {
-                let response = await fetch(`https://impalaapi.herokuapp.com/users/me`,
+                let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/users/me`,
                 {
                     method:"PUT",
                     headers : {
@@ -138,7 +138,7 @@ const MyProfile = () => {
             const getAllUsers = async () => {
               try {
                 let response = await fetch(
-                  `https://impalaapi.herokuapp.com/users`,
+                  `https://customhotels-494f8951a67d.herokuapp.com/users`,
                   {
                     method: "GET",
                     headers: {
@@ -169,7 +169,7 @@ const MyProfile = () => {
               e.preventDefault()
               try {
                 let response = await fetch(
-                  `https://impalaapi.herokuapp.com/users/me`,
+                  `https://customhotels-494f8951a67d.herokuapp.com/users/me`,
                   {
                     method: "DELETE",
                     headers: {
@@ -188,26 +188,6 @@ const MyProfile = () => {
                 console.log(error);
               }
             };
-
-            // const [allUsersBookings,setAllUsersBookings] = useState([])
-            // const getAllUsersBookings = async () => {
-            //   try {
-            //     let response = await fetch(
-            //       `https://impalaapi.herokuapp.com/users/bookedRooms`,
-            //       {
-            //         method: "GET",
-            //         headers: {
-            //           "Content-Type": "application/json",
-            //           "Authorization" : `Bearer ${window.localStorage.getItem("SetToken")}`
-            //         },
-            //       }
-            //     );
-            //     let data = await response.json();
-            //     setAllUsersBookings(data)
-            //   } catch (error) {
-            //     console.log(error);
-            //   }
-            // };
 
             const [domRefresh,setDomRefresh] = useState(false);
 

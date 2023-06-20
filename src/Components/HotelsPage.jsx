@@ -18,7 +18,7 @@ const HotelsPage = () => {
   const location = useLocation();
       const fetchHotels = useCallback( async () => {
       try {
-        let response = await fetch(`https://impalaapi.herokuapp.com/hotels${country.length > 0 ? `?country=${country.toLowerCase()}` : ""}${ country.length > 0 && name.length > 0 ? `&name${name.toLowerCase()}` : country.length === 0 && name.length > 0 ? `?name=${name.toLowerCase()}` : ""}`, {
+        let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/hotels${country.length > 0 ? `?country=${country.toLowerCase()}` : ""}${ country.length > 0 && name.length > 0 ? `&name${name.toLowerCase()}` : country.length === 0 && name.length > 0 ? `?name=${name.toLowerCase()}` : ""}`, {
           method: 'GET',
           headers: {
             "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const CustomNavbar = () => {
   const fetchHotels = async () => {
     try {
       let response = await fetch(
-        `https://impalaapi.herokuapp.com/users/me`,
+        `https://customhotels-494f8951a67d.herokuapp.com/users/me`,
         {
           method: "GET",
           headers: {

@@ -107,7 +107,7 @@ const HotelBooking = () => {
   const fetchHotels = async () => {
     try {
       let response = await fetch(
-        `https://impalaapi.herokuapp.com/hotels/${params.id}`,
+        `https://customhotels-494f8951a67d.herokuapp.com/hotels/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -127,7 +127,7 @@ const HotelBooking = () => {
     e.preventDefault()
     const userInfos = {departureDate, arriveDate ,  hotelName , city , country , roomName , occupancy ,  email }
     try {
-        let response = await fetch(`https://impalaapi.herokuapp.com/users/me/bookedRooms`,
+        let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/users/me/bookedRooms`,
         {
             method:"POST",
             headers : {
@@ -154,7 +154,7 @@ const HotelBooking = () => {
   const getUser = async () => {
     try {
       let response = await fetch(
-        `https://impalaapi.herokuapp.com/users/me`,
+        `https://customhotels-494f8951a67d.herokuapp.com/users/me`,
         {
           method: "GET",
           headers: {

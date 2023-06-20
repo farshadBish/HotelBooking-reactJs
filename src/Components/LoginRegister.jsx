@@ -65,7 +65,7 @@ const LoginRegister = () => {
       setBtnLoading(true)
       try {
         // if(username !== '' && password !== '' && email !== '' && address !== ''){
-        let response = await fetch('https://impalaapi.herokuapp.com/users', {
+        let response = await fetch('https://customhotels-494f8951a67d.herokuapp.com/users', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -104,40 +104,8 @@ const LoginRegister = () => {
   const [isCorrect, setIsCorrect] = useState(true)
 
   // for posting
-  // const [username , setusername] = useState('');
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
-  // const [address,setAddress] = useState('')
-
-  // const registerPost = async (e) => {
-  //   e.preventDefault();
-  //   const userInfos = {username , email , password , address}
-  //   console.log(userInfos);
-  //   try {
-  //     if(username !== '' && password !== '' && email !== '' && address !== ''){
-  //     let response = await fetch('https://impalaapi.herokuapp.com/users', {
-  //       method: "POST",
-  //       headers: {
-  //           "Content-Type" : "application/json",
-  //       },
-  //       body : JSON.stringify(userInfos)
-  //     })
-  //       if(response.ok){
-  //         let data = await response.json()
-  //         console.log(data , "voilaaa the data");
-  //         setHaveAccount(true)
-  //       } else {
-  //         console.log("error with response");
-  //       }
-  //     }
-  //     else{
-  //       setIsFilled(false)
-  //     }
-  //   } catch (error) {
-  //     console.log(error , "eerrrror bro");
-  //     setHaveAccount(false)
-  //   }
-  // }
 
   useEffect(() => {
     setTimeout(() => {
@@ -156,7 +124,7 @@ const LoginRegister = () => {
     try {
       if (password !== '' && email !== '') {
         setIsFilled(true)
-        let response = await fetch(`https://impalaapi.herokuapp.com/users/login`, {
+        let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/users/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

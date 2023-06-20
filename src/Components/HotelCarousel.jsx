@@ -22,7 +22,7 @@ import { Audio } from  'react-loader-spinner'
       
       const fetchHotels = async () =>{
         try {
-          let response = await fetch(`https://impalaapi.herokuapp.com/hotels`,{
+          let response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/hotels`,{
             method : 'GET',
             headers: {
               "Content-Type": "application/json",
