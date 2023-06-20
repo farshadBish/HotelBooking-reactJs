@@ -9,8 +9,6 @@ import "../styles/eachRoomType.css"
 const EachRoomTypeModal = (props) => {
     const [open, setOpen] = useState(false);
     useEffect(()=>{
-        // console.log(props.room  ,"this is rooms");
-        console.log(props.position,"this is roommm");
     })
 
     const  navigate = useNavigate()
@@ -18,7 +16,6 @@ const EachRoomTypeModal = (props) => {
 
     const goToRoom = (e) => {
         navigate(`/hotel/${params.id}/${props.position}`)
-        console.log(params.id,"thats the biggggg id");
         e.preventDefault();
     }
 

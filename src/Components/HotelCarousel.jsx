@@ -17,7 +17,6 @@ import { Audio } from  'react-loader-spinner'
       useEffect(()=>{
         setLoading("true")
         fetchHotels();
-        console.log(hotelName , 'this is ur array');
       },[])
       
       const fetchHotels = async () =>{
@@ -30,7 +29,6 @@ import { Audio } from  'react-loader-spinner'
           })
           let data = await response.json();
           setHotelName(data.allHotels)
-          console.log(data);
           setLoading("false")
         } catch (error) {
           console.log(error);

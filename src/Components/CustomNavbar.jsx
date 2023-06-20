@@ -38,7 +38,6 @@ const CustomNavbar = () => {
     },[tokenUsed])
 
   // const location = useLocation()
-  // console.log(location)
 
   return (<Container fluid className='px-md-3 px-1'>
   <Navbar bg="white" expand="md" className='navbarWidth pr-md-0 pl-md-0 mb-0'>

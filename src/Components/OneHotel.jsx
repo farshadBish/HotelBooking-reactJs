@@ -31,7 +31,6 @@ const OneHotel = () => {
       setLoading("true")
     },[])
     useEffect(()=>{
-      console.log(hotelDetails , "thats the dataaa");
     },[hotelDetails])
   return (
     <Container fluid className="mb-5">

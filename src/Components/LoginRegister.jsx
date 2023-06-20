@@ -74,12 +74,10 @@ const LoginRegister = () => {
         })
         if (response.ok) {
           let data = await response.json()
-          console.log(data, "voilaaa the data");
           setBtnLoading(false)
           setHaveAccount(true)
         } else {
           setBtnLoading(false)
-          console.log("error with response");
         }
         // }
         // else{
@@ -120,7 +118,6 @@ const LoginRegister = () => {
   const loginUser = async (e) => {
     e.preventDefault();
     const userInfos = { email, password };
-    console.log(userInfos);
     try {
       if (password !== '' && email !== '') {
         setIsFilled(true)
@@ -133,7 +130,6 @@ const LoginRegister = () => {
         })
         if (response.ok) {
           let data = await response.json()
-          console.log(data);
           window.localStorage.setItem("SetToken", data.accessToken)
           setIsLoading(true)
           setTimeout(() => {
@@ -141,7 +137,6 @@ const LoginRegister = () => {
             navigate('/')
           }, 2500)
         } else {
-          console.log("response error");
           setIsCorrect(false)
         }
       } else {
@@ -154,7 +149,6 @@ const LoginRegister = () => {
   }
 
   useEffect(() => {
-    console.log(window.localStorage.getItem("SetToken"), "token stored!");
   }, [isLoading]);
 
 

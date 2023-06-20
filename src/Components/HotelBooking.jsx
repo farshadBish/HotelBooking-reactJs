@@ -117,7 +117,6 @@ const HotelBooking = () => {
       );
       let data = await response.json();
       setHotelDetails(data.hotelInfo);
-      console.log(hotelDetails, "thats the hotel details");
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -138,7 +137,6 @@ const HotelBooking = () => {
         })
         if(response.ok){
             let data = await response.json()
-            console.log(data , "voilaaa the data");
             setBookingSuccessful(true)
           } else {
             console.log("error with response");

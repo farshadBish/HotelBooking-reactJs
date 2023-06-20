@@ -43,8 +43,6 @@ const HotelsPage = () => {
   useEffect(() => {
     setLoading(true)
     // fetchHotels();
-    console.log(location.pathname, "the path name");
-    console.log(options);
   }, [])
   
   const options = useMemo(() => countryList().getData(), [])

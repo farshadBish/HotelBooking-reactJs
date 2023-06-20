@@ -101,7 +101,6 @@ const MyProfile = () => {
                 })
                 if(response.ok){
                     let data = await response.json()
-                    console.log(data , "voilaaa the data");
                     alert("Succed")
                   } else {
                     console.log("error with response");
@@ -115,9 +114,6 @@ const MyProfile = () => {
           const [address,setAddress] = useState('');
         
           useEffect(()=>{
-            console.log(userData, "thats the userrrr");
-            console.log(bookedRooms , "thats the data of bookedrooms");
-            // console.log(allUsersBookings,"thats all the users bookings");
             setusername(userData.username);
             setemail(userData.email)
             setAddress(userData.address)
@@ -158,8 +154,6 @@ const MyProfile = () => {
                 getAllUsers()
                 // getAllUsersBookings();
                 setIsAdmin(true);
-                console.log("im hereeeeee");
-                console.log(allUsers,"thats all user");
               }
             },[userData])
 
