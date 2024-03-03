@@ -148,8 +148,8 @@ const LoginRegister = () => {
     }
   }
 
-  useEffect(() => {
-  }, [isLoading]);
+  // useEffect(() => {
+  // }, [isLoading]);
 
 
   // function isValidEmail(email) {
