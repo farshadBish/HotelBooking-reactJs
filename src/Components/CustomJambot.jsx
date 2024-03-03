@@ -65,7 +65,7 @@ const [fifthTrigger,setFifthTrigger] = useState(false);
 // pic change
 const firstPic= "vLogo.png"
 const secondPic= "hotelPic.jpg"
-const thirdPic= "Small-1.jpg"
+const thirdPic= "small-1.jpg"
 const forthPic= "Small-2.jpg"
 const fifthPic= "Small-3.jpg"
 const sixthPic= "Small-4.jpg"
