@@ -1,72 +1,113 @@
+"use client"
+import { useState, useEffect } from "react"
+import { Container, Dropdown, Nav, Navbar } from "react-bootstrap"
+import { useLocation } from "react-router-dom"
+import "../styles/customNavbar.css"
+import { FaUser, FaHome, FaHotel, FaCloudSun, FaInfoCircle, FaBars } from "react-icons/fa"
 
-import React from 'react'
-import { useState , useEffect } from 'react'
-import { Container,Dropdown,Nav,Navbar} from 'react-bootstrap'
-import { useLocation } from 'react-router-dom'
-import '../styles/customNavbar.css'
-import { FaUser } from 'react-icons/fa';
 const CustomNavbar = () => {
-
-  const [userData,setUserData] = useState([])
-
+  const [userData, setUserData] = useState([])
+  const [expanded, setExpanded] = useState(false)
+  const location = useLocation()
 
   const fetchHotels = async () => {
     try {
-      let response = await fetch(
-        `https://customhotels-494f8951a67d.herokuapp.com/users/me`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization" : `Bearer ${window.localStorage.getItem("SetToken")}`
-          },
-        }
-      );
-      let data = await response.json();
+      const response = await fetch(`https://customhotels-494f8951a67d.herokuapp.com/users/me`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${window.localStorage.getItem("SetToken")}`,
+        },
+      })
+      const data = await response.json()
       setUserData(data)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
 
-  const tokenUsed = window.localStorage.getItem("SetToken");
+  useEffect(() => {
+    if (window.localStorage.getItem("SetToken")) {
+      fetchHotels()
+    }
+  }, [window.localStorage.getItem("SetToken")])
 
-    useEffect(()=>{
-      if (window.localStorage.getItem("SetToken")) {
-        fetchHotels();
-      }
-    },[tokenUsed])
+  const getNavLinkClass = (path) => {
+    return location.pathname === path ? "active" : ""
+  }
 
-  // const location = useLocation()
+  const handleLogout = () => {
+    window.localStorage.removeItem("SetToken")
+    window.location.href = "/"
+  }
 
-  return (<Container fluid className='px-md-3 px-1'>
-  <Navbar bg="white" expand="md" className='navbarWidth pr-md-0 pl-md-0 mb-0'>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Nav className='mr-auto'>
-      {window.localStorage.getItem("SetToken") ? <Dropdown>
-  <Dropdown.Toggle variant="" id="dropdown-basic" style={{border:"none",fontSize:"17px"}}>
-  <b><FaUser className='mb-1 mr-1'/> {userData.username}</b>
-  </Dropdown.Toggle>
+  const isLoggedIn = window.localStorage.getItem("SetToken")
 
-  <Dropdown.Menu>
-    <Dropdown.Item href="/myProfile">My Profile</Dropdown.Item>
-    <Dropdown.Item onClick={()=>{
-      window.localStorage.removeItem("SetToken");
-    }} href="/">Log Out</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown> : <Nav.Link href="/login-register" className='navAnim ml-2'><b>Log in / Register</b></Nav.Link> }
-    
-    </Nav>
-      <Nav className="ml-auto">
-      <Nav.Link href="/" className='mr-md-5 mr-0 navAnim'><b>Home</b></Nav.Link>
-      <Navbar.Collapse id="basic-navbar-nav">
-      <Nav.Link href="/hotels" className='mr-md-5 mr-0 navAnim'><b>Hotels</b></Nav.Link>
-        <Nav.Link href="#link-2" className='mr-md-5 mr-0 navAnim'><b>Weather</b></Nav.Link>
-        <Nav.Link href="/about-site" className='pr-2 ml-md-0 navAnim'><b>About-Site</b></Nav.Link>
-    </Navbar.Collapse>
-      </Nav>
-  </Navbar>
-  </Container>
+  return (
+    <div className="navbar-container">
+      <Container fluid>
+        <Navbar
+          bg="white"
+          expand="lg"
+          className="elegant-navbar"
+          expanded={expanded}
+          onToggle={() => setExpanded(!expanded)}
+        >
+          {/* Brand - visible on all screen sizes */}
+          <Navbar.Brand href="/" className="brand-text">
+            <span className="brand-highlight">C</span>ustom <span className="brand-highlight">H</span>otels
+          </Navbar.Brand>
+
+          {/* Mobile Toggle Button */}
+          <div className="navbar-right d-flex align-items-center">
+            {/* User Section - Always visible, adapts to screen size */}
+            <div className="user-section ml-5">
+              {isLoggedIn ? (
+                <Dropdown align={{ lg: "end" }}>
+                  <Dropdown.Toggle variant="" id="dropdown-basic" className="user-dropdown">
+                    <FaUser className="user-icon" />
+                    <span className="username d-none d-sm-inline">{userData.username}</span>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu className="dropdown-menu-animated">
+                    <Dropdown.Item href="/myProfile">My Profile</Dropdown.Item>
+                    <Dropdown.Item onClick={handleLogout}>Log Out</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              ) : (
+                <Nav.Link href="/login-register" className="login-link">
+                  <span className="d-none d-sm-inline">Sign In</span>
+                  <span className="d-inline d-sm-none">Sign In</span>
+                </Nav.Link>
+              )}
+            </div>
+
+            {/* Navbar Toggle */}
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler ms-3">
+              <FaBars />
+            </Navbar.Toggle>
+          </div>
+
+          {/* Collapsible Navigation */}
+          <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse-custom">
+            <Nav className="mx-auto main-nav">
+              <Nav.Link href="/" className={`nav-link-elegant ${getNavLinkClass("/")}`}>
+                <FaHome className="nav-icon" /> <span>Home</span>
+              </Nav.Link>
+              <Nav.Link href="/hotels" className={`nav-link-elegant ${getNavLinkClass("/hotels")}`}>
+                <FaHotel className="nav-icon" /> <span>Hotels</span>
+              </Nav.Link>
+              {/* <Nav.Link href="#link-2" className={`nav-link-elegant ${getNavLinkClass("#link-2")}`}>
+                <FaCloudSun className="nav-icon" /> <span>Weather</span>
+              </Nav.Link> */}
+              <Nav.Link href="/about-site" className={`nav-link-elegant ${getNavLinkClass("/about-site")}`}>
+                <FaInfoCircle className="nav-icon" /> <span>About</span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </Container>
+    </div>
   )
 }
 

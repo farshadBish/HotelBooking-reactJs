@@ -87,12 +87,7 @@ const picChanger = (e,main,first,second,third,forth) => {
         <Row className="text-left">
           <Col md={12} className="">
             <div className="gradient" style={{ borderRadius: "20px" }}>
-              <img
-                src={firstPic}
-                alt=""
-                className="logo"
-              />
-              <h1 className="ml-3">Dream Vacation</h1>
+              <h1 className="ml-3 pt-5">Dream Vacation</h1>
               <p className="ml-3">
                 <b>
                   Enjoy the luxury vacation with your loved ones in our special
