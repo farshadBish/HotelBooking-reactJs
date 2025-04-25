@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap"
 import { useLocation } from "react-router-dom"
 import "../styles/customNavbar.css"
-import { FaUser, FaHome, FaHotel, FaCloudSun, FaInfoCircle, FaBars } from "react-icons/fa"
+import { FaUser, FaHome, FaHotel, FaInfoCircle, FaBars } from "react-icons/fa"
 
 const CustomNavbar = () => {
   const [userData, setUserData] = useState([])
@@ -53,39 +53,41 @@ const CustomNavbar = () => {
           expanded={expanded}
           onToggle={() => setExpanded(!expanded)}
         >
-          {/* Brand - visible on all screen sizes */}
-          <Navbar.Brand href="/" className="brand-text">
-            <span className="brand-highlight">C</span>ustom <span className="brand-highlight">H</span>otels
-          </Navbar.Brand>
+          <div className="d-flex justify-content-between align-items-center w-100">
+            {/* Brand - visible on all screen sizes */}
+            <Navbar.Brand href="/" className="brand-text me-auto">
+              <span className="brand-highlight">C</span>ustom <span className="brand-highlight">H</span>otels
+            </Navbar.Brand>
 
-          {/* Mobile Toggle Button */}
-          <div className="navbar-right d-flex align-items-center">
-            {/* User Section - Always visible, adapts to screen size */}
-            <div className="user-section ml-5">
-              {isLoggedIn ? (
-                <Dropdown align={{ lg: "end" }}>
-                  <Dropdown.Toggle variant="" id="dropdown-basic" className="user-dropdown">
-                    <FaUser className="user-icon" />
-                    <span className="username d-none d-sm-inline">{userData.username}</span>
-                  </Dropdown.Toggle>
+            {/* User Section and Toggle Button - Right aligned */}
+            <div className="d-flex align-items-center">
+              {/* User Section - Always visible, adapts to screen size */}
+              <div className="user-section">
+                {isLoggedIn ? (
+                  <Dropdown align={{ lg: "end" }}>
+                    <Dropdown.Toggle variant="" id="dropdown-basic" className="user-dropdown">
+                      <FaUser className="user-icon" />
+                      <span className="username d-none d-sm-inline">{userData.username}</span>
+                    </Dropdown.Toggle>
 
-                  <Dropdown.Menu className="dropdown-menu-animated">
-                    <Dropdown.Item href="/myProfile">My Profile</Dropdown.Item>
-                    <Dropdown.Item onClick={handleLogout}>Log Out</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              ) : (
-                <Nav.Link href="/login-register" className="login-link">
-                  <span className="d-none d-sm-inline">Sign In</span>
-                  <span className="d-inline d-sm-none">Sign In</span>
-                </Nav.Link>
-              )}
+                    <Dropdown.Menu className="dropdown-menu-animated">
+                      <Dropdown.Item href="/myProfile">My Profile</Dropdown.Item>
+                      <Dropdown.Item onClick={handleLogout}>Log Out</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
+                  <Nav.Link href="/login-register" className="login-link">
+                    <span className="d-none d-sm-inline">Sign In</span>
+                    <span className="d-inline d-sm-none">Sign In</span>
+                  </Nav.Link>
+                )}
+              </div>
+
+              {/* Navbar Toggle */}
+              <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler ms-3">
+                <FaBars />
+              </Navbar.Toggle>
             </div>
-
-            {/* Navbar Toggle */}
-            <Navbar.Toggle aria-controls="basic-navbar-nav" className="custom-toggler ms-3">
-              <FaBars />
-            </Navbar.Toggle>
           </div>
 
           {/* Collapsible Navigation */}
@@ -97,9 +99,6 @@ const CustomNavbar = () => {
               <Nav.Link href="/hotels" className={`nav-link-elegant ${getNavLinkClass("/hotels")}`}>
                 <FaHotel className="nav-icon" /> <span>Hotels</span>
               </Nav.Link>
-              {/* <Nav.Link href="#link-2" className={`nav-link-elegant ${getNavLinkClass("#link-2")}`}>
-                <FaCloudSun className="nav-icon" /> <span>Weather</span>
-              </Nav.Link> */}
               <Nav.Link href="/about-site" className={`nav-link-elegant ${getNavLinkClass("/about-site")}`}>
                 <FaInfoCircle className="nav-icon" /> <span>About</span>
               </Nav.Link>
